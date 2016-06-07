@@ -10,13 +10,17 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) IBOutlet UIView *container;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
+    NSLog(@"ViewController: %@",vc);
 }
 
 - (void)didReceiveMemoryWarning {
