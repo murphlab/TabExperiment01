@@ -7,6 +7,7 @@
 //
 
 #import "FeaturedViewController.h"
+#import "DashboardTabViewController.h"
 
 @interface FeaturedViewController ()
 
@@ -30,6 +31,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)collapseTapped:(id)sender {
+    if ([self.parentViewController isKindOfClass:[DashboardTabViewController class]]) {
+        DashboardTabViewController *dtvc = (DashboardTabViewController *)self.parentViewController;
+        [dtvc setBarCollapsed:!dtvc.barCollapsed animated:YES];
+    }
 }
 
 /*

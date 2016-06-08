@@ -734,12 +734,21 @@
                                     <constraint firstItem="f47-Mw-p9E" firstAttribute="centerY" secondItem="6e0-0f-Qpz" secondAttribute="centerY" id="n6i-5T-Bo0"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRV-tW-rSH">
+                                <rect key="frame" x="244" y="165" width="113" height="30"/>
+                                <state key="normal" title="Do The Collapse"/>
+                                <connections>
+                                    <action selector="collapseTapped:" destination="8t5-a3-IZL" eventType="touchUpInside" id="jLf-YX-jwN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oRV-tW-rSH" firstAttribute="centerX" secondItem="bUE-Gz-pyk" secondAttribute="centerX" id="A8a-er-d2k"/>
                             <constraint firstAttribute="trailing" secondItem="6e0-0f-Qpz" secondAttribute="trailing" id="g1n-P3-CBh"/>
                             <constraint firstItem="6e0-0f-Qpz" firstAttribute="leading" secondItem="bUE-Gz-pyk" secondAttribute="leading" id="kY8-iY-xFl"/>
                             <constraint firstItem="6e0-0f-Qpz" firstAttribute="top" secondItem="bUE-Gz-pyk" secondAttribute="top" constant="2" id="q0r-6h-gTT"/>
+                            <constraint firstItem="oRV-tW-rSH" firstAttribute="top" secondItem="6e0-0f-Qpz" secondAttribute="bottom" constant="8" id="z4B-3L-8OH"/>
                         </constraints>
                     </view>
                 </viewController>
