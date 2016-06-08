@@ -16,8 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
+    NSLog(@"ViewController: %@",vc);}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

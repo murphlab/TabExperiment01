@@ -19,9 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
-    NSLog(@"ViewController: %@",vc);
+
     
 }
 
