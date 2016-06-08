@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) UIViewController *displayedViewController;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabViewHeightConstraint;
 @end
 
 @implementation DashboardTabViewController
@@ -66,8 +67,11 @@
 {
     if (_barCollapsed != barCollapsed) {
         _barCollapsed = barCollapsed;
+        
         // TODO: Implement animted
         NSLog(@"DashboardViewController: barCollapsed: %@", barCollapsed ? @"YES" : @"NO");
+        
+        self.tabViewHeightConstraint.constant = barCollapsed ? 0 : 100;
     }
 }
 

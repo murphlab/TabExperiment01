@@ -102,6 +102,7 @@
                         <outlet property="featuredButton" destination="qcX-Ma-RhO" id="9dw-hf-g8I"/>
                         <outlet property="navButton" destination="axm-fV-UOR" id="ZpG-zD-eqL"/>
                         <outlet property="tabView" destination="ksh-Q4-SqJ" id="4eX-bk-vq0"/>
+                        <outlet property="tabViewHeightConstraint" destination="1hi-9w-hgq" id="JBQ-dg-R8X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtH-Yw-dDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
