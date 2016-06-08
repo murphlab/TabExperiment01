@@ -65,7 +65,7 @@
 - (void)setBarCollapsed:(BOOL)barCollapsed animated:(BOOL)animated
 {
     // TODO: Implement animted
-    
+    NSLog(@"DashboardViewController: barCollapsed: %@", barCollapsed ? @"YES" : @"NO");
     
 }
 
