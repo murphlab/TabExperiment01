@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Lully Tab View Controller-->
+        <!--Test Subclass Lully Tab View Controller-->
         <scene sceneID="qHt-uN-AtB">
             <objects>
-                <viewController id="1cp-rh-ikq" customClass="LullyTabViewController" sceneMemberID="viewController">
+                <viewController id="1cp-rh-ikq" customClass="TestSubclassLullyTabViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="enj-7J-3BR"/>
                         <viewControllerLayoutGuide type="bottom" id="nuy-OW-U1s"/>
