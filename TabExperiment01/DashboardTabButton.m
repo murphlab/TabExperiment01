@@ -8,6 +8,9 @@
 
 #import "DashboardTabButton.h"
 
+const static CGFloat barWidthFactor = 0.66;
+const static CGFloat barHeightFactor = 0.08;
+
 @interface DashboardTabButton ()
 @property (nonatomic, strong) CALayer *selectedBarLayer;
 @end
@@ -31,9 +34,6 @@
 
 - (void)updateSelected
 {
-    static CGFloat barWidthFactor = 0.66;
-    static CGFloat barHeightFactor = 0.16;
-    
     if (self.selected) {
         
         [CATransaction begin];
@@ -46,7 +46,6 @@
                                                  self.bounds.origin.y + self.bounds.size.height - barHeight,
                                                  barWidth,
                                                  barHeight);
-        //self.selectedBarLayer.actions = @{ @"position" : [NSNull null] };
 
         [self.layer addSublayer:self.selectedBarLayer];
         [CATransaction commit];
