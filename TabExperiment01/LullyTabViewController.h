@@ -10,6 +10,7 @@
 
 @interface LullyTabViewController : UIViewController
 
+@property (nonatomic, copy) NSArray *chileViewControllers;
 
 @end
 
