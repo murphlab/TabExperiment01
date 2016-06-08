@@ -67,11 +67,17 @@
 {
     if (_barCollapsed != barCollapsed) {
         _barCollapsed = barCollapsed;
-        
-        // TODO: Implement animted
         NSLog(@"DashboardViewController: barCollapsed: %@", barCollapsed ? @"YES" : @"NO");
-        
+
+        if (animated) [self.view layoutIfNeeded];
+            
         self.tabViewHeightConstraint.constant = barCollapsed ? 0 : 100;
+
+        if (animated) [UIView animateWithDuration:0.2 animations:^{
+                [self.view layoutIfNeeded];
+
+        }];
+
     }
 }
 
