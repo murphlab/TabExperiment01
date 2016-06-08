@@ -9,11 +9,17 @@
 #import "DashboardTabViewController.h"
 
 @interface DashboardTabViewController ()
+
+@property (weak, nonatomic) IBOutlet UIView *tabView;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+
 @property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
 @property (weak, nonatomic) IBOutlet UIButton *featuredButton;
 
 @property (strong, nonatomic) NSMutableArray *vcIndex;
 @property (strong, nonatomic) NSMutableArray *buttonIndex;
+
+@property (weak, nonatomic) UIViewController *displayedViewController;
 
 @end
 
@@ -57,6 +63,36 @@
     [self updateButtons];
 }
 
+- (void) displayContentController: (UIViewController*) content {
+    
+    if (![self.displayedViewController isEqual:content]) {
+        
+        [self.displayedViewController willMoveToParentViewController:nil];
+        [self.displayedViewController.view removeFromSuperview];
+        [self.displayedViewController removeFromParentViewController];
+        
+        self.displayedViewController = content;
+        [self addChildViewController:content];
+        [self.containerView addSubview:content.view];
+        
+        content.view.translatesAutoresizingMaskIntoConstraints = NO;
+        NSDictionary *viewsDictionary = @{@"contentView":content.view};
+        NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[contentView]-0-|"
+                                                                            options:0
+                                                                            metrics:nil
+                                                                              views:viewsDictionary];
+        NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[contentView]-0-|"
+                                                                            options:0
+                                                                            metrics:nil
+                                                                              views:viewsDictionary];
+        [self.containerView addConstraints:constraint_POS_V];
+        [self.containerView addConstraints:constraint_POS_H];
+        
+        [content didMoveToParentViewController:self];
+        
+    }
+}
+
 - (void)updateButtons
 {
     for (NSUInteger i = 0; i < self.buttonIndex.count; i++) {
@@ -65,5 +101,7 @@
         btn.selected = [vc isEqual:self.displayedViewController];
     }
 }
+
+
 
 @end

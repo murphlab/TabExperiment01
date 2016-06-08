@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BE0F81DF1D076DB7007CF6A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F81DE1D076DB7007CF6A9 /* main.m */; };
 		BE0F81E21D076DB7007CF6A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F81E11D076DB7007CF6A9 /* AppDelegate.m */; };
-		BE0F81E51D076DB7007CF6A9 /* LullyTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F81E41D076DB7007CF6A9 /* LullyTabViewController.m */; };
 		BE0F81E81D076DB7007CF6A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F81E61D076DB7007CF6A9 /* Main.storyboard */; };
 		BE0F81EA1D076DB7007CF6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0F81E91D076DB7007CF6A9 /* Assets.xcassets */; };
 		BE0F81ED1D076DB7007CF6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F81EB1D076DB7007CF6A9 /* LaunchScreen.storyboard */; };
@@ -23,8 +22,6 @@
 		BE0F81DE1D076DB7007CF6A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE0F81E01D076DB7007CF6A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE0F81E11D076DB7007CF6A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BE0F81E31D076DB7007CF6A9 /* LullyTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LullyTabViewController.h; sourceTree = "<group>"; };
-		BE0F81E41D076DB7007CF6A9 /* LullyTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LullyTabViewController.m; sourceTree = "<group>"; };
 		BE0F81E71D076DB7007CF6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE0F81E91D076DB7007CF6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE0F81EC1D076DB7007CF6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,8 +66,6 @@
 			children = (
 				BE0F81E01D076DB7007CF6A9 /* AppDelegate.h */,
 				BE0F81E11D076DB7007CF6A9 /* AppDelegate.m */,
-				BE0F81E31D076DB7007CF6A9 /* LullyTabViewController.h */,
-				BE0F81E41D076DB7007CF6A9 /* LullyTabViewController.m */,
 				BE0F82291D07CC8D007CF6A9 /* DashboardTabViewController.h */,
 				BE0F822A1D07CC8D007CF6A9 /* DashboardTabViewController.m */,
 				BE0F82201D079F28007CF6A9 /* FavoritesViewController.h */,
@@ -166,7 +161,6 @@
 			files = (
 				BE0F822E1D07E06E007CF6A9 /* FeaturedViewController.m in Sources */,
 				BE0F822B1D07CC8D007CF6A9 /* DashboardTabViewController.m in Sources */,
-				BE0F81E51D076DB7007CF6A9 /* LullyTabViewController.m in Sources */,
 				BE0F81E21D076DB7007CF6A9 /* AppDelegate.m in Sources */,
 				BE0F82221D079F28007CF6A9 /* FavoritesViewController.m in Sources */,
 				BE0F81DF1D076DB7007CF6A9 /* main.m in Sources */,

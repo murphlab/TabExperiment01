@@ -6,8 +6,8 @@
 //  Copyright © 2016 Murphlab. All rights reserved.
 //
 
-#import "LullyTabViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface DashboardTabViewController : LullyTabViewController
+@interface DashboardTabViewController : UIViewController
 
 @end
