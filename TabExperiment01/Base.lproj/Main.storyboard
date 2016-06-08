@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Dashboard Tab View Controller-->
@@ -93,11 +94,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8K8-2H-7md">
+                                <rect key="frame" x="252" y="70" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="5r8-qK-okZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="x2I-Eo-3Wu" firstAttribute="top" secondItem="t3A-2f-3gn" secondAttribute="bottom" constant="8" id="Cvr-Xm-Ud5"/>
+                            <constraint firstItem="x2I-Eo-3Wu" firstAttribute="top" secondItem="6et-e1-pAk" secondAttribute="topMargin" constant="28" id="8Me-hd-l0H"/>
                             <constraint firstItem="x2I-Eo-3Wu" firstAttribute="centerX" secondItem="6et-e1-pAk" secondAttribute="centerX" id="WnS-7a-Md5"/>
+                            <constraint firstItem="8K8-2H-7md" firstAttribute="top" secondItem="x2I-Eo-3Wu" secondAttribute="bottom" constant="21" id="eQT-XX-nQf"/>
+                            <constraint firstItem="8K8-2H-7md" firstAttribute="centerX" secondItem="6et-e1-pAk" secondAttribute="centerX" id="qs3-si-h0O"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -127,8 +138,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="f47-Mw-p9E" firstAttribute="centerX" secondItem="bUE-Gz-pyk" secondAttribute="centerX" id="NFU-gE-3q6"/>
+                            <constraint firstItem="f47-Mw-p9E" firstAttribute="top" secondItem="bUE-Gz-pyk" secondAttribute="topMargin" constant="28" id="cBM-rd-7od"/>
                             <constraint firstItem="f47-Mw-p9E" firstAttribute="top" secondItem="PZZ-H3-5V5" secondAttribute="bottom" constant="8" id="wzp-7g-LDJ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="wzp-7g-LDJ"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYM-ut-nC6" userLabel="First Responder" sceneMemberID="firstResponder"/>

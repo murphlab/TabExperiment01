@@ -12,5 +12,10 @@
 
 @property (nonatomic, copy) NSArray *viewControllers;
 
+- (void)selectViewControllerWithIndex:(NSUInteger)index;
+
+- (void)displayContentController:(UIViewController*)content;
+
+
 @end
 

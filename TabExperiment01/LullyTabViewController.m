@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *tabView;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) UIViewController *displayedViewController;
 
 @end
 
@@ -20,16 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // NICE TO HAVE: This app-specific stuff could be moved elsewhere to make this a generic class:
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *favoritesVC = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
-    UIViewController *featuredVC = [sb instantiateViewControllerWithIdentifier:@"Featured"];
-    self.viewControllers = @[ favoritesVC, featuredVC ];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)selectViewControllerWithIndex:(NSUInteger)index
+{
+    
 }
 
 #pragma mark - Getters and setters
@@ -40,6 +41,36 @@
     for (UIViewController *vc in _viewControllers) {
         NSLog(@"View controller title: %@", vc.title);;
 
+    }
+}
+
+- (void) displayContentController: (UIViewController*) content {
+    
+    if (![self.displayedViewController isEqual:content]) {
+        
+        [self.displayedViewController willMoveToParentViewController:nil];
+        [self.displayedViewController.view removeFromSuperview];
+        [self.displayedViewController removeFromParentViewController];
+        
+        self.displayedViewController = content;
+        [self addChildViewController:content];
+        [self.containerView addSubview:content.view];
+        
+        content.view.translatesAutoresizingMaskIntoConstraints = NO;
+        NSDictionary *viewsDictionary = @{@"contentView":content.view};
+        NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[contentView]-0-|"
+                                                                            options:0
+                                                                            metrics:nil
+                                                                              views:viewsDictionary];
+        NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[contentView]-0-|"
+                                                                            options:0
+                                                                            metrics:nil
+                                                                              views:viewsDictionary];
+        [self.containerView addConstraints:constraint_POS_V];
+        [self.containerView addConstraints:constraint_POS_H];
+        
+        [content didMoveToParentViewController:self];
+        
     }
 }
 

@@ -1,30 +1,30 @@
 //
-//  FavoritesViewController.m
+//  FeaturedViewController.m
 //  TabExperiment01
 //
 //  Created by Ken Murphy on 6/7/16.
 //  Copyright © 2016 Murphlab. All rights reserved.
 //
 
-#import "FavoritesViewController.h"
+#import "FeaturedViewController.h"
 
-@interface FavoritesViewController ()
+@interface FeaturedViewController ()
 
 @end
 
-@implementation FavoritesViewController
+@implementation FeaturedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSLog(@"FavoritesViewController: viewDidLoad");
+    
+    NSLog(@"FeaturedViewController: viewDidLoad");
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    NSLog(@"FavoritesViewController: viewDidAppear");
+    NSLog(@"FeaturedViewController: viewDidAppear");
 }
 
 - (void)didReceiveMemoryWarning {

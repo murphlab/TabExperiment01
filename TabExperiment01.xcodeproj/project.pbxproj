@@ -15,6 +15,7 @@
 		BE0F81ED1D076DB7007CF6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0F81EB1D076DB7007CF6A9 /* LaunchScreen.storyboard */; };
 		BE0F82221D079F28007CF6A9 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F82211D079F28007CF6A9 /* FavoritesViewController.m */; };
 		BE0F822B1D07CC8D007CF6A9 /* DashboardTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F822A1D07CC8D007CF6A9 /* DashboardTabViewController.m */; };
+		BE0F822E1D07E06E007CF6A9 /* FeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F822D1D07E06E007CF6A9 /* FeaturedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		BE0F82211D079F28007CF6A9 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		BE0F82291D07CC8D007CF6A9 /* DashboardTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardTabViewController.h; sourceTree = "<group>"; };
 		BE0F822A1D07CC8D007CF6A9 /* DashboardTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardTabViewController.m; sourceTree = "<group>"; };
+		BE0F822C1D07E06E007CF6A9 /* FeaturedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedViewController.h; sourceTree = "<group>"; };
+		BE0F822D1D07E06E007CF6A9 /* FeaturedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				BE0F822A1D07CC8D007CF6A9 /* DashboardTabViewController.m */,
 				BE0F82201D079F28007CF6A9 /* FavoritesViewController.h */,
 				BE0F82211D079F28007CF6A9 /* FavoritesViewController.m */,
+				BE0F822C1D07E06E007CF6A9 /* FeaturedViewController.h */,
+				BE0F822D1D07E06E007CF6A9 /* FeaturedViewController.m */,
 				BE0F81E61D076DB7007CF6A9 /* Main.storyboard */,
 				BE0F81E91D076DB7007CF6A9 /* Assets.xcassets */,
 				BE0F81EB1D076DB7007CF6A9 /* LaunchScreen.storyboard */,
@@ -159,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0F822E1D07E06E007CF6A9 /* FeaturedViewController.m in Sources */,
 				BE0F822B1D07CC8D007CF6A9 /* DashboardTabViewController.m in Sources */,
 				BE0F81E51D076DB7007CF6A9 /* LullyTabViewController.m in Sources */,
 				BE0F81E21D076DB7007CF6A9 /* AppDelegate.m in Sources */,

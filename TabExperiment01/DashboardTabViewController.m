@@ -11,6 +11,8 @@
 @interface DashboardTabViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
 @property (weak, nonatomic) IBOutlet UIButton *featuredButton;
+@property (strong, nonatomic) UIViewController *favoritesVC;
+@property (strong, nonatomic) UIViewController *featuredVC;
 @end
 
 @implementation DashboardTabViewController
@@ -18,9 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *favoritesVC = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
-    UIViewController *featuredVC = [sb instantiateViewControllerWithIdentifier:@"Featured"];
-    self.viewControllers = @[ favoritesVC, featuredVC ];
+    self.favoritesVC = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
+    self.featuredVC = [sb instantiateViewControllerWithIdentifier:@"Featured"];
+    
+    [self displayContentController:self.favoritesVC];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,9 +33,12 @@
 }
 
 - (IBAction)favoritesButtonTapped:(id)sender {
+    [self displayContentController:self.favoritesVC];
+
 }
 
 - (IBAction)featuredButtonTapped:(id)sender {
+    [self displayContentController:self.featuredVC];
 }
 
 @end
