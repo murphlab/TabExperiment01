@@ -1,26 +1,26 @@
 //
-//  TestSubclassLullyTabViewController.m
+//  DashboardTabViewController.m
 //  TabExperiment01
 //
 //  Created by Ken Murphy on 6/7/16.
 //  Copyright © 2016 Murphlab. All rights reserved.
 //
 
-#import "TestSubclassLullyTabViewController.h"
+#import "DashboardTabViewController.h"
 
-@interface TestSubclassLullyTabViewController ()
-
+@interface DashboardTabViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
+@property (weak, nonatomic) IBOutlet UIButton *featuredButton;
 @end
 
-@implementation TestSubclassLullyTabViewController
+@implementation DashboardTabViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *favoritesVC = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
     UIViewController *featuredVC = [sb instantiateViewControllerWithIdentifier:@"Featured"];
     self.viewControllers = @[ favoritesVC, featuredVC ];
-    [super viewDidLoad];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,14 +28,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)favoritesButtonTapped:(id)sender {
 }
-*/
+
+- (IBAction)featuredButtonTapped:(id)sender {
+}
 
 @end

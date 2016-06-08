@@ -10,7 +10,8 @@
 
 @interface LullyTabViewController ()
 
-//@property (strong, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *tabView;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
 
@@ -19,8 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-    
+    // NICE TO HAVE: This app-specific stuff could be moved elsewhere to make this a generic class:
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *favoritesVC = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
+    UIViewController *featuredVC = [sb instantiateViewControllerWithIdentifier:@"Featured"];
+    self.viewControllers = @[ favoritesVC, featuredVC ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,7 +38,8 @@
 {
     _viewControllers = [viewControllers copy];
     for (UIViewController *vc in _viewControllers) {
-        NSLog(@"Set vc: %@", vc);
+        NSLog(@"View controller title: %@", vc.title);;
+
     }
 }
 

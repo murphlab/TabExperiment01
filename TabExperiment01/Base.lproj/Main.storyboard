@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Test Subclass Lully Tab View Controller-->
+        <!--Dashboard Tab View Controller-->
         <scene sceneID="qHt-uN-AtB">
             <objects>
-                <viewController id="1cp-rh-ikq" customClass="TestSubclassLullyTabViewController" sceneMemberID="viewController">
+                <viewController id="1cp-rh-ikq" customClass="DashboardTabViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="enj-7J-3BR"/>
                         <viewControllerLayoutGuide type="bottom" id="nuy-OW-U1s"/>
@@ -19,9 +19,33 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-Q4-SqJ" userLabel="Tab View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcX-Ma-RhO">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="100"/>
+                                        <state key="normal" title="Featured"/>
+                                        <connections>
+                                            <action selector="featuredButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="epg-ph-a5a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-2X-GsH">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                        <state key="normal" title="Favorites"/>
+                                        <connections>
+                                            <action selector="favoritesButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="6qr-ZN-UFr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1hi-9w-hgq"/>
+                                    <constraint firstAttribute="bottom" secondItem="qcX-Ma-RhO" secondAttribute="bottom" id="FIs-vT-4f0"/>
+                                    <constraint firstAttribute="trailing" secondItem="qcX-Ma-RhO" secondAttribute="trailing" id="FyG-sz-XiO"/>
+                                    <constraint firstItem="qcX-Ma-RhO" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" id="OKh-Fz-enG"/>
+                                    <constraint firstAttribute="bottom" secondItem="o5l-2X-GsH" secondAttribute="bottom" id="PFd-UL-TZM"/>
+                                    <constraint firstItem="o5l-2X-GsH" firstAttribute="leading" secondItem="ksh-Q4-SqJ" secondAttribute="leading" id="TWw-dU-h2m"/>
+                                    <constraint firstItem="qcX-Ma-RhO" firstAttribute="leading" secondItem="o5l-2X-GsH" secondAttribute="trailing" id="hSc-NN-G3f"/>
+                                    <constraint firstItem="o5l-2X-GsH" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" id="orr-nj-A4T"/>
+                                    <constraint firstItem="o5l-2X-GsH" firstAttribute="width" secondItem="qcX-Ma-RhO" secondAttribute="width" id="p0V-Cm-FxX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-9d-XKf" userLabel="Content View">
@@ -40,6 +64,12 @@
                             <constraint firstItem="a1g-9d-XKf" firstAttribute="leading" secondItem="zah-QV-7mX" secondAttribute="leading" id="o97-WL-pM8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="a1g-9d-XKf" id="Y6e-1f-O1y"/>
+                        <outlet property="favoritesButton" destination="o5l-2X-GsH" id="Z64-qc-zbF"/>
+                        <outlet property="featuredButton" destination="qcX-Ma-RhO" id="9dw-hf-g8I"/>
+                        <outlet property="tabView" destination="ksh-Q4-SqJ" id="4eX-bk-vq0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtH-Yw-dDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
