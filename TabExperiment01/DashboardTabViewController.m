@@ -11,34 +11,55 @@
 @interface DashboardTabViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
 @property (weak, nonatomic) IBOutlet UIButton *featuredButton;
-@property (strong, nonatomic) UIViewController *favoritesVC;
-@property (strong, nonatomic) UIViewController *featuredVC;
+
+@property (strong, nonatomic) NSMutableArray *vcIndex;
+@property (strong, nonatomic) NSMutableArray *buttonIndex;
+
 @end
 
 @implementation DashboardTabViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    static NSUInteger numberOfTabs = 2;
+    self.vcIndex = [NSMutableArray arrayWithCapacity:numberOfTabs];
+    self.buttonIndex = [NSMutableArray arrayWithCapacity:numberOfTabs];
+    
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.favoritesVC = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
-    self.featuredVC = [sb instantiateViewControllerWithIdentifier:@"Featured"];
     
-    [self displayContentController:self.favoritesVC];
+    UIViewController *favoritesVC = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
+    [self.vcIndex addObject:favoritesVC];
+    [self.buttonIndex addObject:self.favoritesButton];
     
+    UIViewController *featuredVC = [sb instantiateViewControllerWithIdentifier:@"Featured"];
+    [self.vcIndex addObject:featuredVC];
+    [self.buttonIndex addObject:self.featuredButton];
+    
+    [self displayContentWithIndex:0];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Actions
+
+- (IBAction)tabButtonTapped:(UIButton *)button
+{
+    NSUInteger index = [self.buttonIndex indexOfObject:button];
+    if (index != NSNotFound) {
+        [self displayContentWithIndex:index];
+    }
 }
 
-- (IBAction)favoritesButtonTapped:(id)sender {
-    [self displayContentController:self.favoritesVC];
+#pragma mark - Private methods
 
+- (void)displayContentWithIndex:(NSUInteger)index
+{
+    [self displayContentController:self.vcIndex[index]];
+    [self updateButtons];
 }
 
-- (IBAction)featuredButtonTapped:(id)sender {
-    [self displayContentController:self.featuredVC];
+- (void)updateButtons
+{
+    
 }
 
 @end

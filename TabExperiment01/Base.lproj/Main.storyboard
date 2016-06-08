@@ -25,14 +25,14 @@
                                         <rect key="frame" x="300" y="0.0" width="300" height="100"/>
                                         <state key="normal" title="Featured"/>
                                         <connections>
-                                            <action selector="featuredButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="epg-ph-a5a"/>
+                                            <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="8kZ-c7-xm1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-2X-GsH">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                                         <state key="normal" title="Favorites"/>
                                         <connections>
-                                            <action selector="favoritesButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="6qr-ZN-UFr"/>
+                                            <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="UvU-rF-Gwf"/>
                                         </connections>
                                     </button>
                                 </subviews>
