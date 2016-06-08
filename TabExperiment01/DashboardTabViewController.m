@@ -64,9 +64,11 @@
 
 - (void)setBarCollapsed:(BOOL)barCollapsed animated:(BOOL)animated
 {
-    // TODO: Implement animted
-    NSLog(@"DashboardViewController: barCollapsed: %@", barCollapsed ? @"YES" : @"NO");
-    
+    if (_barCollapsed != barCollapsed) {
+        _barCollapsed = barCollapsed;
+        // TODO: Implement animted
+        NSLog(@"DashboardViewController: barCollapsed: %@", barCollapsed ? @"YES" : @"NO");
+    }
 }
 
 #pragma mark - Getters and Setters
