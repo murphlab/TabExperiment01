@@ -15,10 +15,13 @@
 @implementation TestSubclassLullyTabViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
-    NSLog(@"ViewController: %@",vc);}
+    UIViewController *favoritesVC = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
+    UIViewController *featuredVC = [sb instantiateViewControllerWithIdentifier:@"Featured"];
+    self.viewControllers = @[ favoritesVC, featuredVC ];
+    [super viewDidLoad];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

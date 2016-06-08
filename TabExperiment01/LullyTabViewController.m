@@ -28,4 +28,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Getters and setters
+
+- (void)setViewControllers:(NSArray *)viewControllers
+{
+    _viewControllers = [viewControllers copy];
+    for (UIViewController *vc in _viewControllers) {
+        NSLog(@"Set vc: %@", vc);
+    }
+}
+
 @end
