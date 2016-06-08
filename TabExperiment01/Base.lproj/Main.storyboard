@@ -39,7 +39,7 @@
                                         <rect key="frame" x="400" y="0.0" width="200" height="100"/>
                                         <state key="normal" title="Nav"/>
                                         <connections>
-                                            <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="kHJ-A7-qbB"/>
+                                            <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="9Ax-jA-NYR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -88,6 +88,7 @@
                         <outlet property="containerView" destination="a1g-9d-XKf" id="Y6e-1f-O1y"/>
                         <outlet property="favoritesButton" destination="o5l-2X-GsH" id="Z64-qc-zbF"/>
                         <outlet property="featuredButton" destination="qcX-Ma-RhO" id="9dw-hf-g8I"/>
+                        <outlet property="navButton" destination="axm-fV-UOR" id="ZpG-zD-eqL"/>
                         <outlet property="tabView" destination="ksh-Q4-SqJ" id="4eX-bk-vq0"/>
                     </connections>
                 </viewController>
@@ -151,7 +152,7 @@
             </objects>
             <point key="canvasLocation" x="237" y="1364"/>
         </scene>
-        <!--View Controller-->
+        <!--Nav 1-->
         <scene sceneID="0kX-CB-MVi">
             <objects>
                 <viewController id="DKr-28-06m" sceneMemberID="viewController">
@@ -167,43 +168,36 @@
                                 <rect key="frame" x="20" y="72" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="hKg-Be-eVg" kind="show" id="ULe-ep-27a"/>
+                                    <segue destination="zmd-F0-Z5u" kind="show" id="iOB-o6-57s"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.36862745879999997" green="0.2392156869" blue="0.53725492949999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jbh-NS-ytv"/>
+                    <navigationItem key="navigationItem" title="Nav 1" id="jbh-NS-ytv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TaD-eh-p6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="897" y="1368"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="e2x-gm-hhh">
+        <!--Nav 2-->
+        <scene sceneID="4Dm-kD-JpL">
             <objects>
-                <viewController id="hKg-Be-eVg" sceneMemberID="viewController">
+                <viewController id="zmd-F0-Z5u" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LKu-jk-CAQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="M37-DS-Sfz"/>
+                        <viewControllerLayoutGuide type="top" id="xgm-6p-npv"/>
+                        <viewControllerLayoutGuide type="bottom" id="OoQ-hs-KHN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ak6-mF-Laq">
+                    <view key="view" contentMode="scaleToFill" id="c6V-lo-lm4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi there" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XI0-Rk-o9k">
-                                <rect key="frame" x="20" y="72" width="61" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.67450980390000004" green="0.81960784310000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Nav 2" id="t31-wM-siJ"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zuy-lz-skB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRn-6v-pDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="1368"/>
+            <point key="canvasLocation" x="1561" y="1365"/>
         </scene>
         <!--Featured-->
         <scene sceneID="BVS-qb-657">

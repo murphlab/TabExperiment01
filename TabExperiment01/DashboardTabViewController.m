@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *favoritesButton;
 @property (weak, nonatomic) IBOutlet UIButton *featuredButton;
+@property (weak, nonatomic) IBOutlet UIButton *navButton;
 
 @property (strong, nonatomic) NSMutableArray *vcIndex;
 @property (strong, nonatomic) NSMutableArray *buttonIndex;
@@ -42,7 +43,11 @@
     [self.vcIndex addObject:featuredVC];
     [self.buttonIndex addObject:self.featuredButton];
     
-    [self displayContentWithIndex:0];    
+    UIViewController *navVC = [sb instantiateViewControllerWithIdentifier:@"Nav"];
+    [self.vcIndex addObject:navVC];
+    [self.buttonIndex addObject:self.navButton];
+    
+    [self displayContentWithIndex:0];
 }
 
 #pragma mark - Actions
