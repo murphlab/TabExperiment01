@@ -10,7 +10,7 @@
 
 @interface LullyTabViewController : UIViewController
 
-@property (nonatomic, copy) NSArray *viewControllers;
+@property (weak, nonatomic) UIViewController *displayedViewController;
 
 - (void)selectViewControllerWithIndex:(NSUInteger)index;
 

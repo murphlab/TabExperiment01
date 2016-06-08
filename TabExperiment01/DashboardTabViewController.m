@@ -36,7 +36,7 @@
     [self.vcIndex addObject:featuredVC];
     [self.buttonIndex addObject:self.featuredButton];
     
-    [self displayContentWithIndex:0];
+    [self displayContentWithIndex:0];    
 }
 
 #pragma mark - Actions
@@ -59,7 +59,11 @@
 
 - (void)updateButtons
 {
-    
+    for (NSUInteger i = 0; i < self.buttonIndex.count; i++) {
+        UIButton *btn = self.buttonIndex[i];
+        UIViewController *vc = self.vcIndex[i];
+        btn.selected = [vc isEqual:self.displayedViewController];
+    }
 }
 
 @end

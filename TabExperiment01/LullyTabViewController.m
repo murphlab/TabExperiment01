@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *tabView;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) UIViewController *displayedViewController;
 
 @end
 
@@ -31,17 +30,6 @@
 - (void)selectViewControllerWithIndex:(NSUInteger)index
 {
     
-}
-
-#pragma mark - Getters and setters
-
-- (void)setViewControllers:(NSArray *)viewControllers
-{
-    _viewControllers = [viewControllers copy];
-    for (UIViewController *vc in _viewControllers) {
-        NSLog(@"View controller title: %@", vc.title);;
-
-    }
 }
 
 - (void) displayContentController: (UIViewController*) content {

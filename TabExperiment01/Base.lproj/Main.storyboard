@@ -24,6 +24,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcX-Ma-RhO">
                                         <rect key="frame" x="300" y="0.0" width="300" height="100"/>
                                         <state key="normal" title="Featured"/>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="8kZ-c7-xm1"/>
                                         </connections>
@@ -31,6 +34,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-2X-GsH">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                                         <state key="normal" title="Favorites"/>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="UvU-rF-Gwf"/>
                                         </connections>
