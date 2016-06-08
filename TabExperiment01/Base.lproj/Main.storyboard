@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="qHt-uN-AtB">
             <objects>
-                <viewController id="1cp-rh-ikq" sceneMemberID="viewController">
+                <viewController id="1cp-rh-ikq" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="enj-7J-3BR"/>
                         <viewControllerLayoutGuide type="bottom" id="nuy-OW-U1s"/>
@@ -48,7 +48,7 @@
         <!--Favorites-->
         <scene sceneID="EUg-Uw-bWf">
             <objects>
-                <viewController storyboardIdentifier="Favorites" title="Favorites" id="zEg-FW-ME1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Favorites" title="Favorites" id="zEg-FW-ME1" customClass="FavoritesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t3A-2f-3gn"/>
                         <viewControllerLayoutGuide type="bottom" id="HtQ-Nr-eWx"/>
@@ -78,7 +78,7 @@
         <!--Featured-->
         <scene sceneID="BVS-qb-657">
             <objects>
-                <viewController title="Featured" id="8t5-a3-IZL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Featured" title="Featured" id="8t5-a3-IZL" customClass="FeaturedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PZZ-H3-5V5"/>
                         <viewControllerLayoutGuide type="bottom" id="E7c-we-KTv"/>
