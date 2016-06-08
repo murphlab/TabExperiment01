@@ -22,32 +22,51 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcX-Ma-RhO" customClass="DashboardTabButton">
-                                        <rect key="frame" x="300" y="0.0" width="300" height="100"/>
+                                        <rect key="frame" x="200" y="0.0" width="200" height="100"/>
                                         <state key="normal" title="Featured"/>
                                         <connections>
                                             <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="8kZ-c7-xm1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-2X-GsH" customClass="DashboardTabButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                         <state key="normal" title="Favorites"/>
                                         <connections>
                                             <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="UvU-rF-Gwf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axm-fV-UOR" customClass="DashboardTabButton">
+                                        <rect key="frame" x="400" y="0.0" width="200" height="100"/>
+                                        <state key="normal" title="Nav"/>
+                                        <connections>
+                                            <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="kHJ-A7-qbB"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1hi-9w-hgq"/>
+                                    <constraint firstItem="o5l-2X-GsH" firstAttribute="width" secondItem="qcX-Ma-RhO" secondAttribute="width" id="2uh-Ok-Qmp"/>
+                                    <constraint firstItem="axm-fV-UOR" firstAttribute="leading" secondItem="qcX-Ma-RhO" secondAttribute="trailing" id="9xh-AP-hYf"/>
                                     <constraint firstAttribute="bottom" secondItem="qcX-Ma-RhO" secondAttribute="bottom" id="FIs-vT-4f0"/>
                                     <constraint firstAttribute="trailing" secondItem="qcX-Ma-RhO" secondAttribute="trailing" id="FyG-sz-XiO"/>
                                     <constraint firstItem="qcX-Ma-RhO" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" id="OKh-Fz-enG"/>
                                     <constraint firstAttribute="bottom" secondItem="o5l-2X-GsH" secondAttribute="bottom" id="PFd-UL-TZM"/>
                                     <constraint firstItem="o5l-2X-GsH" firstAttribute="leading" secondItem="ksh-Q4-SqJ" secondAttribute="leading" id="TWw-dU-h2m"/>
+                                    <constraint firstItem="qcX-Ma-RhO" firstAttribute="width" secondItem="axm-fV-UOR" secondAttribute="width" id="VYK-iC-adN"/>
+                                    <constraint firstAttribute="bottom" secondItem="axm-fV-UOR" secondAttribute="bottom" id="WAl-FA-2xQ"/>
                                     <constraint firstItem="qcX-Ma-RhO" firstAttribute="leading" secondItem="o5l-2X-GsH" secondAttribute="trailing" id="hSc-NN-G3f"/>
+                                    <constraint firstAttribute="trailing" secondItem="axm-fV-UOR" secondAttribute="trailing" id="jII-N3-q7u"/>
                                     <constraint firstItem="o5l-2X-GsH" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" id="orr-nj-A4T"/>
                                     <constraint firstItem="o5l-2X-GsH" firstAttribute="width" secondItem="qcX-Ma-RhO" secondAttribute="width" id="p0V-Cm-FxX"/>
+                                    <constraint firstItem="axm-fV-UOR" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" id="sMT-cc-TRh"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="p0V-Cm-FxX"/>
+                                        <exclude reference="FyG-sz-XiO"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-9d-XKf" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="100" width="600" height="500"/>
@@ -115,6 +134,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngk-Fd-xzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="542" y="-203"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m4U-tw-Kaq">
+            <objects>
+                <navigationController storyboardIdentifier="Nav" id="QJs-e9-RXh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jhz-Mn-tKy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DKr-28-06m" kind="relationship" relationship="rootViewController" id="11Y-Mn-ZDE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yjn-IU-9SZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237" y="1364"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0kX-CB-MVi">
+            <objects>
+                <viewController id="DKr-28-06m" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vp1-X9-zbb"/>
+                        <viewControllerLayoutGuide type="bottom" id="bua-oJ-VfI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rcu-Uy-cSz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsl-pg-hxE">
+                                <rect key="frame" x="20" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="hKg-Be-eVg" kind="show" id="ULe-ep-27a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jbh-NS-ytv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TaD-eh-p6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="1368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e2x-gm-hhh">
+            <objects>
+                <viewController id="hKg-Be-eVg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LKu-jk-CAQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="M37-DS-Sfz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ak6-mF-Laq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi there" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XI0-Rk-o9k">
+                                <rect key="frame" x="20" y="72" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zuy-lz-skB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1553" y="1368"/>
         </scene>
         <!--Featured-->
         <scene sceneID="BVS-qb-657">
