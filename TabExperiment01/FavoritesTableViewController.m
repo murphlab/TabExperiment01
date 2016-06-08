@@ -7,8 +7,11 @@
 //
 
 #import "FavoritesTableViewController.h"
+#import "DashboardTabViewController.h"
 
 @interface FavoritesTableViewController ()
+
+@property (nonatomic) CGFloat lastYOffset;
 
 @end
 
@@ -24,9 +27,27 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.lastYOffset = self.tableView.contentOffset.y;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"SCROLL! %g", self.tableView.contentOffset.y);
+    
+    if ([self.parentViewController isKindOfClass:[DashboardTabViewController class]]) {
+        DashboardTabViewController *dtvc = (DashboardTabViewController *)self.parentViewController;
+        [dtvc setBarCollapsed:self.tableView.contentOffset.y > self.lastYOffset animated:YES];
+    }
+    
+    self.lastYOffset = self.tableView.contentOffset.y;
 }
 
 #pragma mark - Table view data source
