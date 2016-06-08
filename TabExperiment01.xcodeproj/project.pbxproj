@@ -16,6 +16,7 @@
 		BE0F822B1D07CC8D007CF6A9 /* DashboardTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F822A1D07CC8D007CF6A9 /* DashboardTabViewController.m */; };
 		BE0F822E1D07E06E007CF6A9 /* FeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F822D1D07E06E007CF6A9 /* FeaturedViewController.m */; };
 		BE3AE87F1D089BA000EE5171 /* DashboardTabButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AE87E1D089BA000EE5171 /* DashboardTabButton.m */; };
+		BE3AE8881D08D8A500EE5171 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AE8871D08D8A500EE5171 /* FavoritesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		BE0F822D1D07E06E007CF6A9 /* FeaturedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedViewController.m; sourceTree = "<group>"; };
 		BE3AE87D1D089BA000EE5171 /* DashboardTabButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardTabButton.h; sourceTree = "<group>"; };
 		BE3AE87E1D089BA000EE5171 /* DashboardTabButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardTabButton.m; sourceTree = "<group>"; };
+		BE3AE8861D08D8A500EE5171 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
+		BE3AE8871D08D8A500EE5171 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				BE0F822A1D07CC8D007CF6A9 /* DashboardTabViewController.m */,
 				BE0F82201D079F28007CF6A9 /* FavoritesViewController.h */,
 				BE0F82211D079F28007CF6A9 /* FavoritesViewController.m */,
+				BE3AE8861D08D8A500EE5171 /* FavoritesTableViewController.h */,
+				BE3AE8871D08D8A500EE5171 /* FavoritesTableViewController.m */,
 				BE0F822C1D07E06E007CF6A9 /* FeaturedViewController.h */,
 				BE0F822D1D07E06E007CF6A9 /* FeaturedViewController.m */,
 				BE0F81E61D076DB7007CF6A9 /* Main.storyboard */,
@@ -168,6 +173,7 @@
 				BE0F822E1D07E06E007CF6A9 /* FeaturedViewController.m in Sources */,
 				BE0F822B1D07CC8D007CF6A9 /* DashboardTabViewController.m in Sources */,
 				BE0F81E21D076DB7007CF6A9 /* AppDelegate.m in Sources */,
+				BE3AE8881D08D8A500EE5171 /* FavoritesTableViewController.m in Sources */,
 				BE0F82221D079F28007CF6A9 /* FavoritesViewController.m in Sources */,
 				BE0F81DF1D076DB7007CF6A9 /* main.m in Sources */,
 			);
