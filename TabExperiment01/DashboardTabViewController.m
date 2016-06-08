@@ -60,6 +60,22 @@
     }
 }
 
+#pragma mark - DashboardTableViewController
+
+- (void)setBarCollapsed:(BOOL)barCollapsed animated:(BOOL)animated
+{
+    // TODO: Implement animted
+    
+    
+}
+
+#pragma mark - Getters and Setters
+
+- (void)setBarCollapsed:(BOOL)barCollapsed
+{
+    [self setBarCollapsed:barCollapsed animated:NO];
+}
+
 #pragma mark - Private methods
 
 - (void)displayContentWithIndex:(NSUInteger)index

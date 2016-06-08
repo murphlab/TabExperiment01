@@ -10,4 +10,8 @@
 
 @interface DashboardTabViewController : UIViewController
 
+@property (nonatomic) BOOL barCollapsed;
+
+- (void)setBarCollapsed:(BOOL)barCollapsed animated:(BOOL)animated;
+
 @end
