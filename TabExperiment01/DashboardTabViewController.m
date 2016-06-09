@@ -23,6 +23,9 @@
 @property (weak, nonatomic) UIViewController *displayedViewController;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabViewHeightConstraint;
+
+@property (nonatomic) CGFloat tabViewOriginalHeight;
+
 @end
 
 @implementation DashboardTabViewController
@@ -48,6 +51,8 @@
     [self.vcIndex addObject:navVC];
     [self.buttonIndex addObject:self.navButton];
     
+    self.tabViewOriginalHeight = self.tabViewHeightConstraint.constant;
+    
     [self displayContentWithIndex:0];
 }
 
@@ -69,15 +74,37 @@
         _barCollapsed = barCollapsed;
         NSLog(@"DashboardViewController: barCollapsed: %@", barCollapsed ? @"YES" : @"NO");
 
+        if (!barCollapsed) self.tabView.hidden = NO;
+        
         if (animated) [self.view layoutIfNeeded];
             
-        self.tabViewHeightConstraint.constant = barCollapsed ? 0 : 100;
-
-        if (animated) [UIView animateWithDuration:0.2 animations:^{
+        self.tabViewHeightConstraint.constant = barCollapsed ? 0 : self.tabViewOriginalHeight;
+        
+        if (animated) {
+            [UIView animateWithDuration:1.0 animations:^{
                 [self.view layoutIfNeeded];
+            } completion:^(BOOL finished) {
+                if (barCollapsed) {
+                    [UIView animateWithDuration:1.0 animations:^{
+                        self.tabView.hidden = YES;
+                    }];
+                }
+            }];
+        } else {
+            if (barCollapsed) self.tabView.hidden = barCollapsed;
+        }
+        /*
+        if (animated) {
+            [UIView animateWithDuration:1 animations:^{
+                //self.tabView.hidden = barCollapsed;
+                [self.view layoutIfNeeded];
+                if (!barCollapsed) self.tabView.hidden = NO;
+            }];
+        } else {
+            if (!barCollapsed) self.tabView.hidden = NO;
 
-        }];
-
+        }
+         */
     }
 }
 

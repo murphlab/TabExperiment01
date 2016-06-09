@@ -18,67 +18,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-Q4-SqJ" userLabel="Tab View">
-                                <rect key="frame" x="0.0" y="20" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcX-Ma-RhO" customClass="DashboardTabButton">
-                                        <rect key="frame" x="200" y="30" width="200" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <state key="normal" title="Featured"/>
-                                        <connections>
-                                            <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="8kZ-c7-xm1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-2X-GsH" customClass="DashboardTabButton">
-                                        <rect key="frame" x="0.0" y="30" width="200" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <state key="normal" title="Favorites"/>
-                                        <connections>
-                                            <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="UvU-rF-Gwf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axm-fV-UOR" customClass="DashboardTabButton">
-                                        <rect key="frame" x="400" y="30" width="200" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <state key="normal" title="Nav"/>
-                                        <connections>
-                                            <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="9Ax-jA-NYR"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCH-qo-z8A">
-                                        <rect key="frame" x="258" y="16" width="84" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ct4-zz-0fj" userLabel="Tab Inner">
+                                        <rect key="frame" x="0.0" y="-8" width="600" height="78"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcX-Ma-RhO" customClass="DashboardTabButton">
+                                                <rect key="frame" x="0.0" y="38" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="dkQ-Lk-dQM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <state key="normal" title="Featured"/>
+                                                <connections>
+                                                    <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="8kZ-c7-xm1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-2X-GsH" customClass="DashboardTabButton">
+                                                <rect key="frame" x="200" y="38" width="200" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <state key="normal" title="Favorites"/>
+                                                <connections>
+                                                    <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="UvU-rF-Gwf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axm-fV-UOR" customClass="DashboardTabButton">
+                                                <rect key="frame" x="400" y="38" width="200" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <state key="normal" title="Nav"/>
+                                                <connections>
+                                                    <action selector="tabButtonTapped:" destination="1cp-rh-ikq" eventType="touchUpInside" id="9Ax-jA-NYR"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCH-qo-z8A">
+                                                <rect key="frame" x="258" y="14" width="84" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="qcX-Ma-RhO" firstAttribute="top" secondItem="ct4-zz-0fj" secondAttribute="top" id="7bn-tT-1OU"/>
+                                            <constraint firstItem="pCH-qo-z8A" firstAttribute="top" secondItem="ct4-zz-0fj" secondAttribute="top" constant="12" id="H8q-pO-1b2"/>
+                                            <constraint firstAttribute="trailing" secondItem="axm-fV-UOR" secondAttribute="trailing" id="HxX-XV-rbo"/>
+                                            <constraint firstItem="pCH-qo-z8A" firstAttribute="centerX" secondItem="ct4-zz-0fj" secondAttribute="centerX" id="Ivo-m0-EAW"/>
+                                            <constraint firstItem="qcX-Ma-RhO" firstAttribute="leading" secondItem="ct4-zz-0fj" secondAttribute="leading" id="Ms3-71-BJM"/>
+                                            <constraint firstItem="qcX-Ma-RhO" firstAttribute="height" secondItem="o5l-2X-GsH" secondAttribute="height" id="R9a-Ef-SxI"/>
+                                            <constraint firstItem="axm-fV-UOR" firstAttribute="height" secondItem="o5l-2X-GsH" secondAttribute="height" id="Scb-MT-7sM"/>
+                                            <constraint firstItem="o5l-2X-GsH" firstAttribute="leading" secondItem="qcX-Ma-RhO" secondAttribute="trailing" id="WEg-g6-qbk"/>
+                                            <constraint firstAttribute="bottom" secondItem="qcX-Ma-RhO" secondAttribute="bottom" id="aEu-Zj-CMY"/>
+                                            <constraint firstItem="axm-fV-UOR" firstAttribute="width" secondItem="o5l-2X-GsH" secondAttribute="width" id="hZ4-lg-Gza"/>
+                                            <constraint firstItem="axm-fV-UOR" firstAttribute="leading" secondItem="o5l-2X-GsH" secondAttribute="trailing" id="i5W-y5-2VN"/>
+                                            <constraint firstItem="o5l-2X-GsH" firstAttribute="baseline" secondItem="qcX-Ma-RhO" secondAttribute="baseline" id="iBT-9u-QAQ"/>
+                                            <constraint firstItem="o5l-2X-GsH" firstAttribute="baseline" secondItem="axm-fV-UOR" secondAttribute="baseline" id="oW2-lD-YmE"/>
+                                            <constraint firstItem="qcX-Ma-RhO" firstAttribute="width" secondItem="o5l-2X-GsH" secondAttribute="width" id="xEe-Hy-qiB"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="7bn-tT-1OU"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="1hi-9w-hgq"/>
-                                    <constraint firstItem="o5l-2X-GsH" firstAttribute="width" secondItem="qcX-Ma-RhO" secondAttribute="width" id="2uh-Ok-Qmp"/>
-                                    <constraint firstItem="axm-fV-UOR" firstAttribute="leading" secondItem="qcX-Ma-RhO" secondAttribute="trailing" id="9xh-AP-hYf"/>
-                                    <constraint firstAttribute="bottom" secondItem="qcX-Ma-RhO" secondAttribute="bottom" id="FIs-vT-4f0"/>
-                                    <constraint firstAttribute="trailing" secondItem="qcX-Ma-RhO" secondAttribute="trailing" id="FyG-sz-XiO"/>
-                                    <constraint firstItem="qcX-Ma-RhO" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" constant="30" id="OKh-Fz-enG"/>
-                                    <constraint firstAttribute="bottom" secondItem="o5l-2X-GsH" secondAttribute="bottom" id="PFd-UL-TZM"/>
-                                    <constraint firstItem="pCH-qo-z8A" firstAttribute="centerX" secondItem="ksh-Q4-SqJ" secondAttribute="centerX" id="QxA-Zh-EwK"/>
-                                    <constraint firstItem="o5l-2X-GsH" firstAttribute="leading" secondItem="ksh-Q4-SqJ" secondAttribute="leading" id="TWw-dU-h2m"/>
-                                    <constraint firstItem="qcX-Ma-RhO" firstAttribute="width" secondItem="axm-fV-UOR" secondAttribute="width" id="VYK-iC-adN"/>
-                                    <constraint firstAttribute="bottom" secondItem="axm-fV-UOR" secondAttribute="bottom" id="WAl-FA-2xQ"/>
-                                    <constraint firstItem="pCH-qo-z8A" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" constant="16" id="eAr-f9-ZF7"/>
-                                    <constraint firstItem="qcX-Ma-RhO" firstAttribute="leading" secondItem="o5l-2X-GsH" secondAttribute="trailing" id="hSc-NN-G3f"/>
-                                    <constraint firstAttribute="trailing" secondItem="axm-fV-UOR" secondAttribute="trailing" id="jII-N3-q7u"/>
-                                    <constraint firstItem="o5l-2X-GsH" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" constant="30" id="orr-nj-A4T"/>
-                                    <constraint firstItem="o5l-2X-GsH" firstAttribute="width" secondItem="qcX-Ma-RhO" secondAttribute="width" id="p0V-Cm-FxX"/>
-                                    <constraint firstItem="axm-fV-UOR" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" constant="30" id="sMT-cc-TRh"/>
-                                    <constraint firstItem="pCH-qo-z8A" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" constant="21" id="vqV-Pr-qy7"/>
+                                    <constraint firstAttribute="height" constant="72" id="1hi-9w-hgq"/>
+                                    <constraint firstAttribute="bottom" secondItem="ct4-zz-0fj" secondAttribute="bottom" constant="2" id="Jd6-23-M4D"/>
+                                    <constraint firstAttribute="trailing" secondItem="ct4-zz-0fj" secondAttribute="trailing" id="Xap-jp-1Bl"/>
+                                    <constraint firstItem="ct4-zz-0fj" firstAttribute="leading" secondItem="ksh-Q4-SqJ" secondAttribute="leading" id="mdN-i3-0gm"/>
+                                    <constraint firstItem="ct4-zz-0fj" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="top" constant="-8" id="ymd-fM-EEJ"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="p0V-Cm-FxX"/>
-                                        <exclude reference="FyG-sz-XiO"/>
-                                        <exclude reference="vqV-Pr-qy7"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-9d-XKf" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="100" width="600" height="500"/>
@@ -91,7 +101,7 @@
                             <constraint firstItem="ksh-Q4-SqJ" firstAttribute="leading" secondItem="zah-QV-7mX" secondAttribute="leading" id="Kfz-74-YMn"/>
                             <constraint firstAttribute="trailing" secondItem="ksh-Q4-SqJ" secondAttribute="trailing" id="NQI-15-icl"/>
                             <constraint firstAttribute="trailing" secondItem="a1g-9d-XKf" secondAttribute="trailing" id="Pc3-Af-Vxc"/>
-                            <constraint firstItem="ksh-Q4-SqJ" firstAttribute="top" secondItem="zah-QV-7mX" secondAttribute="top" constant="20" id="bQv-Uf-DYW"/>
+                            <constraint firstItem="ksh-Q4-SqJ" firstAttribute="top" secondItem="zah-QV-7mX" secondAttribute="top" constant="28" id="bQv-Uf-DYW"/>
                             <constraint firstItem="a1g-9d-XKf" firstAttribute="top" secondItem="ksh-Q4-SqJ" secondAttribute="bottom" id="caG-5B-eeI"/>
                             <constraint firstItem="a1g-9d-XKf" firstAttribute="leading" secondItem="zah-QV-7mX" secondAttribute="leading" id="o97-WL-pM8"/>
                         </constraints>
@@ -107,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtH-Yw-dDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-243" y="-247"/>
+            <point key="canvasLocation" x="-233" y="-269"/>
         </scene>
         <!--Favorites Table View Controller-->
         <scene sceneID="qHD-kW-BbW">
@@ -719,7 +729,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6e0-0f-Qpz">
-                                <rect key="frame" x="0.0" y="2" width="600" height="155"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="155"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f47-Mw-p9E">
                                         <rect key="frame" x="266" y="67" width="69" height="21"/>
@@ -736,7 +746,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRV-tW-rSH">
-                                <rect key="frame" x="244" y="165" width="113" height="30"/>
+                                <rect key="frame" x="244" y="163" width="113" height="30"/>
                                 <state key="normal" title="Do The Collapse"/>
                                 <connections>
                                     <action selector="collapseTapped:" destination="8t5-a3-IZL" eventType="touchUpInside" id="jLf-YX-jwN"/>
@@ -748,7 +758,7 @@
                             <constraint firstItem="oRV-tW-rSH" firstAttribute="centerX" secondItem="bUE-Gz-pyk" secondAttribute="centerX" id="A8a-er-d2k"/>
                             <constraint firstAttribute="trailing" secondItem="6e0-0f-Qpz" secondAttribute="trailing" id="g1n-P3-CBh"/>
                             <constraint firstItem="6e0-0f-Qpz" firstAttribute="leading" secondItem="bUE-Gz-pyk" secondAttribute="leading" id="kY8-iY-xFl"/>
-                            <constraint firstItem="6e0-0f-Qpz" firstAttribute="top" secondItem="bUE-Gz-pyk" secondAttribute="top" constant="2" id="q0r-6h-gTT"/>
+                            <constraint firstItem="6e0-0f-Qpz" firstAttribute="top" secondItem="bUE-Gz-pyk" secondAttribute="top" id="q0r-6h-gTT"/>
                             <constraint firstItem="oRV-tW-rSH" firstAttribute="top" secondItem="6e0-0f-Qpz" secondAttribute="bottom" constant="8" id="z4B-3L-8OH"/>
                         </constraints>
                     </view>
