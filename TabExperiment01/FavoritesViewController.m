@@ -20,6 +20,9 @@
 
 @property (nonatomic) CGFloat headerHeightFromStoryboard;
 
+@property (weak, nonatomic) IBOutlet UIImageView *headerPhoto;
+@property (weak, nonatomic) IBOutlet UILabel *headerTitle;
+
 @end
 
 @implementation FavoritesViewController
@@ -97,7 +100,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"SCROLL! %g", scrollView.contentOffset.y);
+    //NSLog(@"SCROLL! %g", scrollView.contentOffset.y);
     
     
     CGFloat headerHeightAdj = 0 - scrollView.contentOffset.y;
@@ -105,7 +108,15 @@
     headerHeightAdj = MAX(0, headerHeightAdj);
     self.headerHeightConstraint.constant = headerHeightAdj;
     
+    CGFloat scaleFactor = headerHeightAdj / self.headerHeightFromStoryboard;
     
+    NSLog(@"scaleFactor: %g", scaleFactor);
+    
+    CGAffineTransform scaleTransform = CGAffineTransformScale(CGAffineTransformIdentity, scaleFactor, scaleFactor);
+    
+    self.headerPhoto.transform = scaleTransform;
+    self.headerTitle.transform = scaleTransform;
+
 #define ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
     // prevent collapse/restore on bounce...
