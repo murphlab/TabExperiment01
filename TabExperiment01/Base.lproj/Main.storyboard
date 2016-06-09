@@ -666,7 +666,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ihd-Uh-xLx">
-                                <rect key="frame" x="0.0" y="140" width="600" height="460"/>
+                                <rect key="frame" x="0.0" y="180" width="600" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dummyCell" textLabel="mKl-Tv-qLE" style="IBUITableViewCellStyleDefault" id="GrZ-KG-D33">
@@ -689,10 +689,29 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-Pk-VQs" userLabel="Header View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simpson's ken closup.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="p69-70-tzk">
+                                        <rect key="frame" x="263" y="16" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="LF4-iG-cEy"/>
+                                            <constraint firstAttribute="height" constant="75" id="nRY-rL-HVM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ken's Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTB-7m-Prr">
+                                        <rect key="frame" x="243" y="105" width="114" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="7LP-87-FFo"/>
+                                    <constraint firstAttribute="height" constant="180" id="7LP-87-FFo"/>
+                                    <constraint firstItem="sTB-7m-Prr" firstAttribute="top" secondItem="p69-70-tzk" secondAttribute="bottom" constant="14" id="Wcs-69-ZAG"/>
+                                    <constraint firstItem="p69-70-tzk" firstAttribute="centerX" secondItem="E7x-Pk-VQs" secondAttribute="centerX" id="WjV-BG-hfB"/>
+                                    <constraint firstItem="sTB-7m-Prr" firstAttribute="centerX" secondItem="E7x-Pk-VQs" secondAttribute="centerX" id="gQW-wo-mS2"/>
+                                    <constraint firstItem="p69-70-tzk" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="16" id="hYl-Ny-T94"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -701,7 +720,7 @@
                             <constraint firstAttribute="trailing" secondItem="E7x-Pk-VQs" secondAttribute="trailing" id="5xQ-hh-xeh"/>
                             <constraint firstItem="ihd-Uh-xLx" firstAttribute="leading" secondItem="4te-s1-qHC" secondAttribute="leading" id="9yR-3r-cmb"/>
                             <constraint firstItem="pUZ-pM-SlC" firstAttribute="top" secondItem="ihd-Uh-xLx" secondAttribute="bottom" id="B5E-vP-a7h"/>
-                            <constraint firstItem="ihd-Uh-xLx" firstAttribute="top" secondItem="4te-s1-qHC" secondAttribute="top" constant="140" id="JcP-E1-CCi"/>
+                            <constraint firstItem="ihd-Uh-xLx" firstAttribute="top" secondItem="4te-s1-qHC" secondAttribute="top" constant="180" id="JcP-E1-CCi"/>
                             <constraint firstAttribute="trailing" secondItem="ihd-Uh-xLx" secondAttribute="trailing" id="Ucv-Im-hLV"/>
                             <constraint firstItem="E7x-Pk-VQs" firstAttribute="leading" secondItem="4te-s1-qHC" secondAttribute="leading" id="xQQ-pX-ULC"/>
                             <constraint firstItem="E7x-Pk-VQs" firstAttribute="top" secondItem="4te-s1-qHC" secondAttribute="top" id="yYr-ho-8fc"/>
@@ -833,4 +852,7 @@
             <point key="canvasLocation" x="552" y="472"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="simpson's ken closup.jpg" width="224" height="246"/>
+    </resources>
 </document>

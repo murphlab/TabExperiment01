@@ -17,6 +17,7 @@
 		BE0F822E1D07E06E007CF6A9 /* FeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F822D1D07E06E007CF6A9 /* FeaturedViewController.m */; };
 		BE3AE87F1D089BA000EE5171 /* DashboardTabButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AE87E1D089BA000EE5171 /* DashboardTabButton.m */; };
 		BE3AE8881D08D8A500EE5171 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AE8871D08D8A500EE5171 /* FavoritesTableViewController.m */; };
+		BE9E170B1D0A0E8100D1FC4E /* simpson's ken closup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE9E170A1D0A0E8100D1FC4E /* simpson's ken closup.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BE3AE87E1D089BA000EE5171 /* DashboardTabButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardTabButton.m; sourceTree = "<group>"; };
 		BE3AE8861D08D8A500EE5171 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		BE3AE8871D08D8A500EE5171 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
+		BE9E170A1D0A0E8100D1FC4E /* simpson's ken closup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "simpson's ken closup.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				BE0F822C1D07E06E007CF6A9 /* FeaturedViewController.h */,
 				BE0F822D1D07E06E007CF6A9 /* FeaturedViewController.m */,
 				BE0F81E61D076DB7007CF6A9 /* Main.storyboard */,
+				BE9E170A1D0A0E8100D1FC4E /* simpson's ken closup.jpg */,
 				BE0F81E91D076DB7007CF6A9 /* Assets.xcassets */,
 				BE0F81EB1D076DB7007CF6A9 /* LaunchScreen.storyboard */,
 				BE0F81EE1D076DB7007CF6A9 /* Info.plist */,
@@ -158,6 +161,7 @@
 			files = (
 				BE0F81ED1D076DB7007CF6A9 /* LaunchScreen.storyboard in Resources */,
 				BE0F81EA1D076DB7007CF6A9 /* Assets.xcassets in Resources */,
+				BE9E170B1D0A0E8100D1FC4E /* simpson's ken closup.jpg in Resources */,
 				BE0F81E81D076DB7007CF6A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
