@@ -145,7 +145,7 @@
     //self.headerPhotoTopSpacingConstraint.constant = self.headerPhotoSpacingFromStoryboard * scaleFactor;
     //self.headerTitleTopSpacingConstraint.constant = self.headerTitleSpacingFromStoryboard * scaleFactor;
 
-    static CGFloat progressBarAndNTButtonPadding = 16.0;
+    static CGFloat progressBarAndNTButtonPadding = 14.0;
     
     CGFloat progressBarTrailingSpaceDeltaAfterCollapse = self.headerNTButton.frame.size.width + progressBarAndNTButtonPadding;
     CGFloat progressBarTrailingSpaceDeltaScaled = progressBarTrailingSpaceDeltaAfterCollapse * (1.0 - scaleFactor);
