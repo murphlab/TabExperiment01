@@ -9,10 +9,14 @@
 #import "FavoritesViewController.h"
 #import "DashboardTabViewController.h"
 
+static const CGFloat kHeaderHeight = 100;
+
 @interface FavoritesViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) CGFloat lastYOffset;
+@property (nonatomic, weak) UIView *headerView;
+@property (nonatomic, weak) NSLayoutConstraint *headerHeightConstraint;
 
 @end
 
@@ -26,6 +30,42 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(kHeaderHeight, 0, 0, 0);
+
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
+                                                                 self.view.bounds.origin.y,
+                                                                 self.view.bounds.size.width,
+                                                                 kHeaderHeight)];
+    headerView.backgroundColor  = [UIColor redColor];
+    [self.view addSubview:headerView];
+    [self.view bringSubviewToFront:headerView];
+    headerView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSDictionary *viewsDictionary = @{@"headerView":headerView};
+    NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[headerView]"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[headerView]-0-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    NSLayoutConstraint *constraint_HEIGHT = [NSLayoutConstraint constraintWithItem:headerView
+                                                                         attribute:NSLayoutAttributeHeight
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:nil
+                                                                         attribute:NSLayoutAttributeNotAnAttribute
+                                                                        multiplier:1.0
+                                                                          constant:kHeaderHeight];
+    [self.view addConstraints:constraint_POS_V];
+    [self.view addConstraints:constraint_POS_H];
+    [self.view addConstraint:constraint_HEIGHT];
+    
+    self.headerView = headerView;
+    self.headerHeightConstraint = constraint_HEIGHT;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -44,7 +84,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-#define ENABLE_TAB_COLLAPSE
+#undef ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
     // prevent collapse/restore on bounce...
     // top:
