@@ -80,31 +80,29 @@
             
         self.tabViewHeightConstraint.constant = barCollapsed ? 0 : self.tabViewOriginalHeight;
         
+        
         if (animated) {
             [UIView animateWithDuration:1.0 animations:^{
                 [self.view layoutIfNeeded];
             } completion:^(BOOL finished) {
-                if (barCollapsed) {
-                    [UIView animateWithDuration:1.0 animations:^{
-                        self.tabView.hidden = YES;
-                    }];
-                }
+                if (barCollapsed) self.tabView.hidden = YES;
             }];
         } else {
             if (barCollapsed) self.tabView.hidden = YES;
         }
+         
         /*
         if (animated) {
             [UIView animateWithDuration:1 animations:^{
                 //self.tabView.hidden = barCollapsed;
                 [self.view layoutIfNeeded];
-                if (!barCollapsed) self.tabView.hidden = NO;
+                if (barCollapsed) self.tabView.hidden = YES;
             }];
         } else {
-            if (!barCollapsed) self.tabView.hidden = NO;
+            if (barCollapsed) self.tabView.hidden = YES;
 
         }
-         */
+        */
     }
 }
 
