@@ -691,27 +691,39 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-Pk-VQs" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simpson's ken closup.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="p69-70-tzk">
-                                        <rect key="frame" x="263" y="16" width="75" height="75"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0o-as-kpN">
+                                        <rect key="frame" x="190" y="8" width="220" height="104"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simpson's ken closup.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="p69-70-tzk">
+                                                <rect key="frame" x="73" y="0.0" width="75" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="75" id="LF4-iG-cEy"/>
+                                                    <constraint firstAttribute="height" constant="75" id="nRY-rL-HVM"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ken's Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTB-7m-Prr">
+                                                <rect key="frame" x="53" y="83" width="114" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="LF4-iG-cEy"/>
-                                            <constraint firstAttribute="height" constant="75" id="nRY-rL-HVM"/>
+                                            <constraint firstAttribute="bottom" secondItem="sTB-7m-Prr" secondAttribute="bottom" id="43Z-H0-9CV"/>
+                                            <constraint firstItem="sTB-7m-Prr" firstAttribute="centerX" secondItem="E0o-as-kpN" secondAttribute="centerX" id="8nd-dy-EDL"/>
+                                            <constraint firstAttribute="width" constant="220" id="Uml-dZ-oXD"/>
+                                            <constraint firstItem="p69-70-tzk" firstAttribute="centerX" secondItem="E0o-as-kpN" secondAttribute="centerX" id="fu7-sr-JZu"/>
+                                            <constraint firstItem="p69-70-tzk" firstAttribute="top" secondItem="E0o-as-kpN" secondAttribute="top" id="nDF-OQ-LHz"/>
+                                            <constraint firstItem="sTB-7m-Prr" firstAttribute="top" secondItem="p69-70-tzk" secondAttribute="bottom" constant="8" id="r5o-tT-cHC"/>
                                         </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ken's Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTB-7m-Prr">
-                                        <rect key="frame" x="243" y="105" width="114" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="7LP-87-FFo"/>
-                                    <constraint firstItem="sTB-7m-Prr" firstAttribute="top" secondItem="p69-70-tzk" secondAttribute="bottom" constant="14" id="Wcs-69-ZAG"/>
-                                    <constraint firstItem="p69-70-tzk" firstAttribute="centerX" secondItem="E7x-Pk-VQs" secondAttribute="centerX" id="WjV-BG-hfB"/>
-                                    <constraint firstItem="sTB-7m-Prr" firstAttribute="centerX" secondItem="E7x-Pk-VQs" secondAttribute="centerX" id="gQW-wo-mS2"/>
-                                    <constraint firstItem="p69-70-tzk" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="16" id="hYl-Ny-T94"/>
+                                    <constraint firstItem="E0o-as-kpN" firstAttribute="centerX" secondItem="E7x-Pk-VQs" secondAttribute="centerX" id="MY5-yS-Afx"/>
+                                    <constraint firstItem="E0o-as-kpN" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="8" id="sTF-Nf-Hx7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -728,10 +740,7 @@
                     </view>
                     <connections>
                         <outlet property="headerHeightConstraint" destination="7LP-87-FFo" id="WgF-Z9-Uav"/>
-                        <outlet property="headerPhoto" destination="p69-70-tzk" id="lK3-F0-euV"/>
-                        <outlet property="headerPhotoTopSpacingConstraint" destination="hYl-Ny-T94" id="kLa-0F-dbA"/>
-                        <outlet property="headerTitle" destination="sTB-7m-Prr" id="Rdu-cO-pla"/>
-                        <outlet property="headerTitleTopSpacingConstraint" destination="Wcs-69-ZAG" id="MsB-wE-HVN"/>
+                        <outlet property="headerInfoBoxView" destination="E0o-as-kpN" id="wIE-PM-EfD"/>
                         <outlet property="headerView" destination="E7x-Pk-VQs" id="MYJ-hL-ftg"/>
                         <outlet property="tableTopSpacingConstraint" destination="JcP-E1-CCi" id="dX6-jM-8E5"/>
                         <outlet property="tableView" destination="ihd-Uh-xLx" id="4xs-o3-vQ8"/>
