@@ -718,12 +718,42 @@
                                             <constraint firstItem="sTB-7m-Prr" firstAttribute="top" secondItem="p69-70-tzk" secondAttribute="bottom" constant="8" id="r5o-tT-cHC"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krT-Pm-Ymk">
+                                        <rect key="frame" x="0.0" y="120" width="600" height="60"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bax-Qe-Dii">
+                                                <rect key="frame" x="18" y="14" width="564" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Bax-Qe-Dii" secondAttribute="bottom" constant="14" id="0Hg-8a-gdy"/>
+                                            <constraint firstItem="Bax-Qe-Dii" firstAttribute="top" secondItem="krT-Pm-Ymk" secondAttribute="top" constant="14" id="8zG-nG-PfX"/>
+                                            <constraint firstAttribute="height" constant="60" id="Rsi-Ng-Y9k"/>
+                                            <constraint firstItem="Bax-Qe-Dii" firstAttribute="leading" secondItem="krT-Pm-Ymk" secondAttribute="leading" constant="18" id="jji-HL-U3M"/>
+                                            <constraint firstAttribute="trailing" secondItem="Bax-Qe-Dii" secondAttribute="trailing" constant="18" id="tAP-au-HDr"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jub-pR-7ra">
+                                        <rect key="frame" x="546" y="8" width="36" height="36"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="Ccj-aD-W9a"/>
+                                            <constraint firstAttribute="width" constant="36" id="aZK-wN-lcD"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="jub-pR-7ra" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="8" id="5zs-pU-34J"/>
                                     <constraint firstAttribute="height" constant="180" id="7LP-87-FFo"/>
+                                    <constraint firstAttribute="trailing" secondItem="krT-Pm-Ymk" secondAttribute="trailing" id="Hy7-qk-5qu"/>
                                     <constraint firstItem="E0o-as-kpN" firstAttribute="centerX" secondItem="E7x-Pk-VQs" secondAttribute="centerX" id="MY5-yS-Afx"/>
+                                    <constraint firstAttribute="bottom" secondItem="krT-Pm-Ymk" secondAttribute="bottom" id="SzP-xJ-w2F"/>
+                                    <constraint firstItem="krT-Pm-Ymk" firstAttribute="leading" secondItem="E7x-Pk-VQs" secondAttribute="leading" id="iqW-4a-L82"/>
                                     <constraint firstItem="E0o-as-kpN" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="8" id="sTF-Nf-Hx7"/>
+                                    <constraint firstAttribute="trailing" secondItem="jub-pR-7ra" secondAttribute="trailing" constant="18" id="ym0-fd-04z"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -738,10 +768,14 @@
                             <constraint firstItem="E7x-Pk-VQs" firstAttribute="top" secondItem="4te-s1-qHC" secondAttribute="top" id="yYr-ho-8fc"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="headerDummyProgressBarView" destination="Bax-Qe-Dii" id="jwW-mW-Tl3"/>
                         <outlet property="headerHeightConstraint" destination="7LP-87-FFo" id="WgF-Z9-Uav"/>
                         <outlet property="headerInfoBoxView" destination="E0o-as-kpN" id="wIE-PM-EfD"/>
+                        <outlet property="headerNTButton" destination="jub-pR-7ra" id="kYC-f8-Qh8"/>
                         <outlet property="headerView" destination="E7x-Pk-VQs" id="MYJ-hL-ftg"/>
+                        <outlet property="headerVisibleAfterCollapseView" destination="krT-Pm-Ymk" id="nO0-vK-gR0"/>
                         <outlet property="tableTopSpacingConstraint" destination="JcP-E1-CCi" id="dX6-jM-8E5"/>
                         <outlet property="tableView" destination="ihd-Uh-xLx" id="4xs-o3-vQ8"/>
                     </connections>

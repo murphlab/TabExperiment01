@@ -13,6 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIView *headerInfoBoxView;
+@property (weak, nonatomic) IBOutlet UIView *headerNTButton;
+@property (weak, nonatomic) IBOutlet UIView *headerVisibleAfterCollapseView;
+@property (weak, nonatomic) IBOutlet UIView *headerDummyProgressBarView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) CGFloat lastYOffset;
 
