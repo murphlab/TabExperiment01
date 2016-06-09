@@ -111,18 +111,40 @@
     
     NSLog(@"scaleFactor: %g", scaleFactor);
     
+    //CGFloat translateY = (scaleFactor - 1.0) * self.headerInfoBoxView.frame.size.height;
+    CGAffineTransform headerInfoBoxTransform = CGAffineTransformScale(CGAffineTransformIdentity, scaleFactor, scaleFactor);
+
     /*
-    CGAffineTransform photoTitleTransform = CGAffineTransformTranslate(CGAffineTransformIdentity,0,self.headerPhotoSpacingFromStoryboard * scaleFactor);
+    headerInfoBoxTransform = CGAffineTransformTranslate(headerInfoBoxTransform,
+                                                                          0,
+                                                                          translateY);
+     */
+    //self.headerInfoBoxView.layer.anchorPoint = CGPointMake( self.headerInfoBoxView.layer.bounds.size.width / 2.0, 0.0);
+
+    //self.headerInfoBoxView.layer.anchorPoint = CGPointMake(0.5, 0.0);
+    self.headerInfoBoxView.transform = headerInfoBoxTransform;
+    //self.headerInfoBoxView.layer.anchorPoint = CGPointMake(0.5, 0.5);
+    
+    self.headerInfoBoxView.alpha = scaleFactor;
+    
+    
     //photoTitleTransform = CGAffineTransformScale(photoTitleTransform, scaleFactor, scaleFactor);
     
     //CGAffineTransformScale(CGAffineTransformIdentity, scaleFactor, scaleFactor);
     //photoTitleTransform = CGAffineTransformTranslate(photoTitleTransform, 0, self.headerPhotoSpacingFromStoryboard - (scaleFactor * self.headerPhotoSpacingFromStoryboard));
     
-    self.headerPhoto.transform = photoTitleTransform;
-    self.headerTitle.transform = photoTitleTransform;
+    //self.headerPhoto.transform = photoTitleTransform;
+    //self.headerTitle.transform = photoTitleTransform;
     //self.headerPhotoTopSpacingConstraint.constant = self.headerPhotoSpacingFromStoryboard * scaleFactor;
     //self.headerTitleTopSpacingConstraint.constant = self.headerTitleSpacingFromStoryboard * scaleFactor;
-*/
+
+    
+    
+    
+    
+    
+    
+    
 #undef ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
     // prevent collapse/restore on bounce...
