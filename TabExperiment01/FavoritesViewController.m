@@ -7,10 +7,12 @@
 //
 
 #import "FavoritesViewController.h"
+#import "DashboardTabViewController.h"
 
 @interface FavoritesViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) CGFloat lastYOffset;
 
 @end
 
@@ -36,6 +38,40 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table view delegate (and therefore scroll view delegate)
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+#define ENABLE_TAB_COLLAPSE
+#ifdef ENABLE_TAB_COLLAPSE
+    // prevent collapse/restore on bounce...
+    // top:
+    if (scrollView.contentOffset.y <= 0) return;
+    // bottom:
+    if (scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.frame.size.height) return;
+    
+    
+    //static CGFloat minimumYOffset = 50;
+    
+    static CGFloat mimimumMovement = 10;
+    
+    NSLog(@"SCROLL! %g", self.tableView.contentOffset.y);
+    
+    if ([self.parentViewController isKindOfClass:[DashboardTabViewController class]]) {
+        DashboardTabViewController *dtvc = (DashboardTabViewController *)self.parentViewController;
+        static BOOL animated = YES;
+        if (self.tableView.contentOffset.y <= 0.0) {
+            [dtvc setBarCollapsed:NO animated:animated]; // always un-collapse if scrolled to the top
+        } else if (fabs(self.tableView.contentOffset.y - self.lastYOffset) < mimimumMovement) {
+            return;
+        } else {
+            [dtvc setBarCollapsed:self.tableView.contentOffset.y > self.lastYOffset animated:animated];
+        }
+    }
+    self.lastYOffset = self.tableView.contentOffset.y;
+#endif
 }
 
 #pragma mark - Table view data source
