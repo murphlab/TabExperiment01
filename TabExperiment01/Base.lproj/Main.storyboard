@@ -688,7 +688,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-Pk-VQs">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-Pk-VQs" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -708,6 +708,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerHeightConstraint" destination="7LP-87-FFo" id="WgF-Z9-Uav"/>
+                        <outlet property="tableTopSpacingConstraint" destination="JcP-E1-CCi" id="dX6-jM-8E5"/>
                         <outlet property="tableView" destination="ihd-Uh-xLx" id="4xs-o3-vQ8"/>
                     </connections>
                 </viewController>

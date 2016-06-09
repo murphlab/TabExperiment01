@@ -16,7 +16,8 @@ static const CGFloat kHeaderHeight = 100;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) CGFloat lastYOffset;
 @property (nonatomic, weak) UIView *headerView;
-@property (nonatomic, weak) NSLayoutConstraint *headerHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableTopSpacingConstraint;
 
 @end
 
@@ -31,8 +32,9 @@ static const CGFloat kHeaderHeight = 100;
     self.tableView.dataSource = self;
     
     
-    self.tableView.contentInset = UIEdgeInsetsMake(kHeaderHeight, 0, 0, 0);
+    //self.tableView.contentInset = UIEdgeInsetsMake(kHeaderHeight, 0, 0, 0);
 
+    /*
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
                                                                  self.view.bounds.origin.y,
                                                                  self.view.bounds.size.width,
@@ -66,6 +68,7 @@ static const CGFloat kHeaderHeight = 100;
     
     self.headerView = headerView;
     self.headerHeightConstraint = constraint_HEIGHT;
+     */
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -86,10 +89,12 @@ static const CGFloat kHeaderHeight = 100;
 {
     NSLog(@"SCROLL! %g", scrollView.contentOffset.y);
     
+    /*
     CGFloat headerHeightAdj = 0 - scrollView.contentOffset.y;
     headerHeightAdj = MIN(kHeaderHeight, headerHeightAdj);
     headerHeightAdj = MAX(0, headerHeightAdj);
     self.headerHeightConstraint.constant = headerHeightAdj;
+     */
     
 #define ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
