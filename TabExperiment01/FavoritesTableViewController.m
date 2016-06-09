@@ -40,6 +40,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+#undef ENABLE_TAB_COLLAPSE
+#ifdef ENABLE_TAB_COLLAPSE
     // prevent collapse/restore on bounce...
     // top:
     if (scrollView.contentOffset.y <= 0) return;
@@ -65,6 +67,7 @@
         }
     }
     self.lastYOffset = self.tableView.contentOffset.y;
+#endif
 }
 
 #pragma mark - Table view data source
