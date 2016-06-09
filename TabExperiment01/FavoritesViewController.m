@@ -84,7 +84,14 @@ static const CGFloat kHeaderHeight = 100;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-#undef ENABLE_TAB_COLLAPSE
+    NSLog(@"SCROLL! %g", scrollView.contentOffset.y);
+    
+    CGFloat headerHeightAdj = 0 - scrollView.contentOffset.y;
+    headerHeightAdj = MIN(kHeaderHeight, headerHeightAdj);
+    headerHeightAdj = MAX(0, headerHeightAdj);
+    self.headerHeightConstraint.constant = headerHeightAdj;
+    
+#define ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
     // prevent collapse/restore on bounce...
     // top:
@@ -96,8 +103,6 @@ static const CGFloat kHeaderHeight = 100;
     //static CGFloat minimumYOffset = 50;
     
     static CGFloat mimimumMovement = 10;
-    
-    NSLog(@"SCROLL! %g", scrollView.contentOffset.y);
     
     if ([self.parentViewController isKindOfClass:[DashboardTabViewController class]]) {
         DashboardTabViewController *dtvc = (DashboardTabViewController *)self.parentViewController;
