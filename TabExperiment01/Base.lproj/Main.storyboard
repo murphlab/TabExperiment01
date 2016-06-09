@@ -666,7 +666,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ihd-Uh-xLx">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="140" width="600" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dummyCell" textLabel="mKl-Tv-qLE" style="IBUITableViewCellStyleDefault" id="GrZ-KG-D33">
@@ -688,13 +688,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-Pk-VQs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="7LP-87-FFo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="E7x-Pk-VQs" secondAttribute="trailing" id="5xQ-hh-xeh"/>
                             <constraint firstItem="ihd-Uh-xLx" firstAttribute="leading" secondItem="4te-s1-qHC" secondAttribute="leading" id="9yR-3r-cmb"/>
                             <constraint firstItem="pUZ-pM-SlC" firstAttribute="top" secondItem="ihd-Uh-xLx" secondAttribute="bottom" id="B5E-vP-a7h"/>
-                            <constraint firstItem="ihd-Uh-xLx" firstAttribute="top" secondItem="4te-s1-qHC" secondAttribute="top" id="JcP-E1-CCi"/>
+                            <constraint firstItem="ihd-Uh-xLx" firstAttribute="top" secondItem="4te-s1-qHC" secondAttribute="top" constant="140" id="JcP-E1-CCi"/>
                             <constraint firstAttribute="trailing" secondItem="ihd-Uh-xLx" secondAttribute="trailing" id="Ucv-Im-hLV"/>
+                            <constraint firstItem="E7x-Pk-VQs" firstAttribute="leading" secondItem="4te-s1-qHC" secondAttribute="leading" id="xQQ-pX-ULC"/>
+                            <constraint firstItem="E7x-Pk-VQs" firstAttribute="top" secondItem="4te-s1-qHC" secondAttribute="top" id="yYr-ho-8fc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -703,7 +713,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wsc-LP-Iua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179" y="-367"/>
+            <point key="canvasLocation" x="1184" y="-368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m4U-tw-Kaq">
