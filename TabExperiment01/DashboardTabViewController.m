@@ -92,7 +92,7 @@
                 if (!barCollapsed) self.tabView.hidden = NO;
             }];
         } else {
-            //if (barCollapsed) self.tabView.hidden = YES;
+            if (!barCollapsed) self.tabView.hidden = NO;
         }
          
         /*
