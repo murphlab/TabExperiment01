@@ -776,6 +776,7 @@
                         <outlet property="headerNTButton" destination="jub-pR-7ra" id="kYC-f8-Qh8"/>
                         <outlet property="headerView" destination="E7x-Pk-VQs" id="MYJ-hL-ftg"/>
                         <outlet property="headerVisibleAfterCollapseView" destination="krT-Pm-Ymk" id="nO0-vK-gR0"/>
+                        <outlet property="progressBarTrailingSpacingConstraint" destination="tAP-au-HDr" id="pYj-ZH-kkd"/>
                         <outlet property="tableTopSpacingConstraint" destination="JcP-E1-CCi" id="dX6-jM-8E5"/>
                         <outlet property="tableView" destination="ihd-Uh-xLx" id="4xs-o3-vQ8"/>
                     </connections>

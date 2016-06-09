@@ -21,6 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableTopSpacingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressBarTrailingSpacingConstraint;
 
 @property (nonatomic) CGFloat headerHeightFromStoryboard;
 
