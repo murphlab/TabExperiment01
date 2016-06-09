@@ -17,8 +17,12 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableTopSpacingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerPhotoTopSpacingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerTitleTopSpacingConstraint;
 
 @property (nonatomic) CGFloat headerHeightFromStoryboard;
+@property (nonatomic) CGFloat headerPhotoSpacingFromStoryboard;
+@property (nonatomic) CGFloat headerTitleSpacingFromStoryboard;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headerPhoto;
 @property (weak, nonatomic) IBOutlet UILabel *headerTitle;
@@ -37,6 +41,10 @@
     
     // The storyboard is where we get the default height of the header:
     self.headerHeightFromStoryboard = self.headerHeightConstraint.constant;
+    
+    // ditto spacing for photo and title:
+    self.headerPhotoSpacingFromStoryboard = self.headerPhotoTopSpacingConstraint.constant;
+    self.headerTitleSpacingFromStoryboard = self.headerTitleTopSpacingConstraint.constant;
     
     // Modify storyboard layout of table, pinning tableView to top of root view (under the header):
     self.tableTopSpacingConstraint.constant = 0.0;
@@ -112,12 +120,19 @@
     
     NSLog(@"scaleFactor: %g", scaleFactor);
     
-    CGAffineTransform scaleTransform = CGAffineTransformScale(CGAffineTransformIdentity, scaleFactor, scaleFactor);
     
-    self.headerPhoto.transform = scaleTransform;
-    self.headerTitle.transform = scaleTransform;
+    CGAffineTransform photoTitleTransform = CGAffineTransformTranslate(CGAffineTransformIdentity,0,self.headerPhotoSpacingFromStoryboard * scaleFactor);
+    //photoTitleTransform = CGAffineTransformScale(photoTitleTransform, scaleFactor, scaleFactor);
+    
+    //CGAffineTransformScale(CGAffineTransformIdentity, scaleFactor, scaleFactor);
+    //photoTitleTransform = CGAffineTransformTranslate(photoTitleTransform, 0, self.headerPhotoSpacingFromStoryboard - (scaleFactor * self.headerPhotoSpacingFromStoryboard));
+    
+    self.headerPhoto.transform = photoTitleTransform;
+    self.headerTitle.transform = photoTitleTransform;
+    //self.headerPhotoTopSpacingConstraint.constant = self.headerPhotoSpacingFromStoryboard * scaleFactor;
+    //self.headerTitleTopSpacingConstraint.constant = self.headerTitleSpacingFromStoryboard * scaleFactor;
 
-#define ENABLE_TAB_COLLAPSE
+#undef ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
     // prevent collapse/restore on bounce...
     // top:
