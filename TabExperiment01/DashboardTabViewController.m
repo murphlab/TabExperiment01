@@ -39,7 +39,7 @@
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    UIViewController *favoritesVC = [sb instantiateViewControllerWithIdentifier:@"Favorites"];
+    UIViewController *favoritesVC = [sb instantiateViewControllerWithIdentifier:@"FavoritesVC"];
     [self.vcIndex addObject:favoritesVC];
     [self.buttonIndex addObject:self.favoritesButton];
     

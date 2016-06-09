@@ -8,7 +8,9 @@
 
 #import "FavoritesViewController.h"
 
-@interface FavoritesViewController ()
+@interface FavoritesViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -18,6 +20,10 @@
     [super viewDidLoad];
 
     NSLog(@"FavoritesViewController: viewDidLoad");
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -31,6 +37,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table view data source
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 30;
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dummyCell" forIndexPath:indexPath];
+    return cell;
+}
+
+
 
 /*
 #pragma mark - Navigation
