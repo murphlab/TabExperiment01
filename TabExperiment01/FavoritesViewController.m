@@ -50,7 +50,7 @@
     // top:
     if (scrollView.contentOffset.y <= 0) return;
     // bottom:
-    if (scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.frame.size.height) return;
+    if (scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.bounds.size.height) return;
     
     
     //static CGFloat minimumYOffset = 50;
