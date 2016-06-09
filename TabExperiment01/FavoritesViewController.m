@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressBarTrailingSpacingConstraint;
 
 @property (nonatomic) CGFloat headerHeightFromStoryboard;
-
+@property (nonatomic) CGFloat progressBarTrailingSpacingFromStoryboard;
 
 @end
 
@@ -40,6 +40,9 @@
     
     // The storyboard is where we get the default height of the header:
     self.headerHeightFromStoryboard = self.headerHeightConstraint.constant;
+    
+    // capture original tailing spacing as this will be adjusted dynamically as well:
+    self.progressBarTrailingSpacingFromStoryboard = self.progressBarTrailingSpacingConstraint.constant;
     
     // Modify storyboard layout of table, pinning tableView to top of root view (under the header):
     self.tableTopSpacingConstraint.constant = 0.0;
@@ -142,8 +145,12 @@
     //self.headerPhotoTopSpacingConstraint.constant = self.headerPhotoSpacingFromStoryboard * scaleFactor;
     //self.headerTitleTopSpacingConstraint.constant = self.headerTitleSpacingFromStoryboard * scaleFactor;
 
+    static CGFloat progressBarAndNTButtonPadding = 12.0;
     
-    
+    CGFloat progressBarTrailingSpaceDeltaAfterCollapse = self.headerNTButton.frame.size.width + progressBarAndNTButtonPadding;
+    CGFloat progressBarTrailingSpaceDeltaScaled = progressBarTrailingSpaceDeltaAfterCollapse * (1.0 - scaleFactor);
+    CGFloat progressBarTrailingSpace = self.progressBarTrailingSpacingFromStoryboard + progressBarTrailingSpaceDeltaScaled;
+    self.progressBarTrailingSpacingConstraint.constant = progressBarTrailingSpace;
     
     
     
