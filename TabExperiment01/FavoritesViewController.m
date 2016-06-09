@@ -9,15 +9,16 @@
 #import "FavoritesViewController.h"
 #import "DashboardTabViewController.h"
 
-static const CGFloat kHeaderHeight = 100;
-
 @interface FavoritesViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) CGFloat lastYOffset;
-@property (nonatomic, weak) UIView *headerView;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableTopSpacingConstraint;
+
+@property (nonatomic) CGFloat headerHeightFromStoryboard;
 
 @end
 
@@ -30,6 +31,15 @@ static const CGFloat kHeaderHeight = 100;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    // The storyboard is where we get the default height of the header:
+    self.headerHeightFromStoryboard = self.headerHeightConstraint.constant;
+    
+    // Modify storyboard layout of table, pinning tableView to top of root view (under the header):
+    self.tableTopSpacingConstraint.constant = 0.0;
+    
+    // Set content inset to push top of table contents out from under header:
+    self.tableView.contentInset = UIEdgeInsetsMake(self.headerHeightFromStoryboard, 0, 0, 0);
     
     
     //self.tableView.contentInset = UIEdgeInsetsMake(kHeaderHeight, 0, 0, 0);
