@@ -99,12 +99,12 @@
 {
     NSLog(@"SCROLL! %g", scrollView.contentOffset.y);
     
-    /*
+    
     CGFloat headerHeightAdj = 0 - scrollView.contentOffset.y;
-    headerHeightAdj = MIN(kHeaderHeight, headerHeightAdj);
+    headerHeightAdj = MIN(self.headerHeightFromStoryboard, headerHeightAdj);
     headerHeightAdj = MAX(0, headerHeightAdj);
     self.headerHeightConstraint.constant = headerHeightAdj;
-     */
+    
     
 #define ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
