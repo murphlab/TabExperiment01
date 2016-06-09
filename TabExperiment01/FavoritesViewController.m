@@ -111,7 +111,7 @@
     headerHeightAdj = MAX(self.headerVisibleAfterCollapseView.frame.size.height, headerHeightAdj);
     self.headerHeightConstraint.constant = headerHeightAdj;
     
-    CGFloat scaleFactor = headerHeightAdj / self.headerHeightFromStoryboard;
+    CGFloat scaleFactor = (headerHeightAdj - self.headerVisibleAfterCollapseView.frame.size.height) / (self.headerHeightFromStoryboard - self.headerVisibleAfterCollapseView.frame.size.height);
     
     NSLog(@"scaleFactor: %g", scaleFactor);
     
