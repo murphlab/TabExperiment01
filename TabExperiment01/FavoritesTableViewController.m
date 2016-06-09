@@ -40,11 +40,20 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    // prevent collapse/restore on bounce...
+    // top:
+    if (scrollView.contentOffset.y <= 0) return;
+    // bottom:
+    if (scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.frame.size.height) return;
+    
+    
+    //static CGFloat minimumYOffset = 50;
+    
     NSLog(@"SCROLL! %g", self.tableView.contentOffset.y);
     
     if ([self.parentViewController isKindOfClass:[DashboardTabViewController class]]) {
         DashboardTabViewController *dtvc = (DashboardTabViewController *)self.parentViewController;
-        [dtvc setBarCollapsed:self.tableView.contentOffset.y > self.lastYOffset animated:YES];
+        [dtvc setBarCollapsed:/* self.tableView.contentOffset.y > minimumYOffset && */ self.tableView.contentOffset.y > self.lastYOffset animated:YES];
     }
     
     self.lastYOffset = self.tableView.contentOffset.y;
