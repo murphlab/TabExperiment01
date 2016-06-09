@@ -108,7 +108,7 @@
     
     CGFloat headerHeightAdj = 0 - scrollView.contentOffset.y;
     headerHeightAdj = MIN(self.headerHeightFromStoryboard, headerHeightAdj);
-    headerHeightAdj = MAX(0, headerHeightAdj);
+    headerHeightAdj = MAX(self.headerVisibleAfterCollapseView.frame.size.height, headerHeightAdj);
     self.headerHeightConstraint.constant = headerHeightAdj;
     
     CGFloat scaleFactor = headerHeightAdj / self.headerHeightFromStoryboard;
