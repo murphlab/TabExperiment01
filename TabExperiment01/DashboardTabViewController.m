@@ -72,43 +72,25 @@
 {
     if (_barCollapsed != barCollapsed) {
         _barCollapsed = barCollapsed;
-        NSLog(@"DashboardViewController: barCollapsed: %@", barCollapsed ? @"YES" : @"NO");
-
-        //self.tabView.hidden = barCollapsed;
         
-        //if (!barCollapsed) self.tabView.hidden = NO;
+        //NSLog(@"DashboardViewController: barCollapsed: %@", barCollapsed ? @"YES" : @"NO");
+
         if (barCollapsed) self.tabView.hidden = YES;
         
         if (animated) [self.view layoutIfNeeded];
             
         self.tabViewHeightConstraint.constant = barCollapsed ? 0 : self.tabViewOriginalHeight;
         
-        
         if (animated) {
             [UIView animateWithDuration:0.2 animations:^{
                 [self.view layoutIfNeeded];
             } completion:^(BOOL finished) {
-                //if (barCollapsed) self.tabView.hidden = YES;
                 // state may have changed during animation so set hidden according to actual height:
                 self.tabView.hidden = self.tabViewHeightConstraint.constant == 0.0;
-                //if (!barCollapsed) self.tabView.hidden = NO;
             }];
         } else {
             if (!barCollapsed) self.tabView.hidden = NO;
         }
-         
-        /*
-        if (animated) {
-            [UIView animateWithDuration:1 animations:^{
-                //self.tabView.hidden = barCollapsed;
-                [self.view layoutIfNeeded];
-                if (barCollapsed) self.tabView.hidden = YES;
-            }];
-        } else {
-            if (barCollapsed) self.tabView.hidden = YES;
-
-        }
-        */
     }
 }
 
