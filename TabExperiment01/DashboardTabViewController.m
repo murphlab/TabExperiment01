@@ -89,7 +89,9 @@
                 [self.view layoutIfNeeded];
             } completion:^(BOOL finished) {
                 //if (barCollapsed) self.tabView.hidden = YES;
-                if (!barCollapsed) self.tabView.hidden = NO;
+                // state may have changed during animation so set hidden according to actual height:
+                self.tabView.hidden = self.tabViewHeightConstraint.constant == 0.0;
+                //if (!barCollapsed) self.tabView.hidden = NO;
             }];
         } else {
             if (!barCollapsed) self.tabView.hidden = NO;
