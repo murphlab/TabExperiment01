@@ -74,7 +74,10 @@
         _barCollapsed = barCollapsed;
         NSLog(@"DashboardViewController: barCollapsed: %@", barCollapsed ? @"YES" : @"NO");
 
-        if (!barCollapsed) self.tabView.hidden = NO;
+        //self.tabView.hidden = barCollapsed;
+        
+        //if (!barCollapsed) self.tabView.hidden = NO;
+        if (barCollapsed) self.tabView.hidden = YES;
         
         if (animated) [self.view layoutIfNeeded];
             
@@ -82,13 +85,14 @@
         
         
         if (animated) {
-            [UIView animateWithDuration:1.0 animations:^{
+            [UIView animateWithDuration:0.2 animations:^{
                 [self.view layoutIfNeeded];
             } completion:^(BOOL finished) {
-                if (barCollapsed) self.tabView.hidden = YES;
+                //if (barCollapsed) self.tabView.hidden = YES;
+                if (!barCollapsed) self.tabView.hidden = NO;
             }];
         } else {
-            if (barCollapsed) self.tabView.hidden = YES;
+            //if (barCollapsed) self.tabView.hidden = YES;
         }
          
         /*
