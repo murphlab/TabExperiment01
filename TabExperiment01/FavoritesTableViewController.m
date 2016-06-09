@@ -48,14 +48,22 @@
     
     
     //static CGFloat minimumYOffset = 50;
+
+    static CGFloat mimimumMovement = 10;
     
     NSLog(@"SCROLL! %g", self.tableView.contentOffset.y);
     
     if ([self.parentViewController isKindOfClass:[DashboardTabViewController class]]) {
         DashboardTabViewController *dtvc = (DashboardTabViewController *)self.parentViewController;
-        [dtvc setBarCollapsed:/* self.tableView.contentOffset.y > minimumYOffset && */ self.tableView.contentOffset.y > self.lastYOffset animated:YES];
+        
+        if (self.tableView.contentOffset.y <= 0.0) {
+            [dtvc setBarCollapsed:NO]; // always un-collapse if scrolled to the top
+        } else if (fabs(self.tableView.contentOffset.y - self.lastYOffset) < mimimumMovement) {
+            return;
+        } else {
+            [dtvc setBarCollapsed:self.tableView.contentOffset.y > self.lastYOffset animated:YES];
+        }
     }
-    
     self.lastYOffset = self.tableView.contentOffset.y;
 }
 
