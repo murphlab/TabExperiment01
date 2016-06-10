@@ -723,8 +723,18 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bax-Qe-Dii">
                                                 <rect key="frame" x="18" y="14" width="564" height="32"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(fake progress bar)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-Ps-a1K">
+                                                        <rect key="frame" x="221" y="7" width="122" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="RJm-Ps-a1K" firstAttribute="centerY" secondItem="Bax-Qe-Dii" secondAttribute="centerY" id="MxF-FX-Ztx"/>
+                                                    <constraint firstItem="RJm-Ps-a1K" firstAttribute="centerX" secondItem="Bax-Qe-Dii" secondAttribute="centerX" id="Osb-tD-mN6"/>
                                                     <constraint firstAttribute="height" constant="32" id="b7i-rG-aWq"/>
                                                 </constraints>
                                             </view>
@@ -745,10 +755,20 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jub-pR-7ra">
                                         <rect key="frame" x="550" y="14" width="32" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(nt)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVs-ch-ySZ">
+                                                <rect key="frame" x="5" y="8" width="23" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="Ccj-aD-W9a"/>
+                                            <constraint firstItem="xVs-ch-ySZ" firstAttribute="centerX" secondItem="jub-pR-7ra" secondAttribute="centerX" id="Hch-f4-teg"/>
                                             <constraint firstAttribute="width" constant="32" id="aZK-wN-lcD"/>
+                                            <constraint firstItem="xVs-ch-ySZ" firstAttribute="centerY" secondItem="jub-pR-7ra" secondAttribute="centerY" id="k0e-vx-z8K"/>
                                         </constraints>
                                     </view>
                                 </subviews>
