@@ -156,23 +156,26 @@
     
     
     
-#undef ENABLE_TAB_COLLAPSE
+#define ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
+    
+    CGFloat topContentOffset = -self.headerVisibleAfterCollapseView.frame.size.height;
+    
     // prevent collapse/restore on bounce...
     // top:
-    if (scrollView.contentOffset.y <= -self.headerVisibleAfterCollapseView.frame.size.height) return;
+    if (scrollView.contentOffset.y <= topContentOffset) return;
     // bottom:
     if (scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.bounds.size.height) return;
     
     
     //static CGFloat minimumYOffset = 50;
     
-    static CGFloat mimimumMovement = 10;
+    static CGFloat mimimumMovement = 1;
     
     if ([self.parentViewController isKindOfClass:[DashboardTabViewController class]]) {
         DashboardTabViewController *dtvc = (DashboardTabViewController *)self.parentViewController;
         static BOOL animated = YES;
-        if (scrollView.contentOffset.y <= 0.0) {
+        if (scrollView.contentOffset.y <= topContentOffset) {
             [dtvc setBarCollapsed:NO animated:animated]; // always un-collapse if scrolled to the top
         } else if (fabs(scrollView.contentOffset.y - self.lastYOffset) < mimimumMovement) {
             return;
