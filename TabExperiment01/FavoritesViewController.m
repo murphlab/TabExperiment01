@@ -160,7 +160,7 @@
 #ifdef ENABLE_TAB_COLLAPSE
     // prevent collapse/restore on bounce...
     // top:
-    if (scrollView.contentOffset.y <= 0) return;
+    if (scrollView.contentOffset.y <= -self.headerVisibleAfterCollapseView.frame.size.height) return;
     // bottom:
     if (scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.bounds.size.height) return;
     
