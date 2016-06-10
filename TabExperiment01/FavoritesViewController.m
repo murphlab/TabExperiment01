@@ -106,7 +106,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    //NSLog(@"SCROLL! %g", scrollView.contentOffset.y);
+    NSLog(@"SCROLL! %g", scrollView.contentOffset.y);
     
     
     CGFloat headerHeightAdj = 0 - scrollView.contentOffset.y;
@@ -116,7 +116,7 @@
     
     CGFloat scaleFactor = (headerHeightAdj - self.headerVisibleAfterCollapseView.frame.size.height) / (self.headerHeightFromStoryboard - self.headerVisibleAfterCollapseView.frame.size.height);
     
-    NSLog(@"scaleFactor: %g", scaleFactor);
+    //NSLog(@"scaleFactor: %g", scaleFactor);
     
     //CGFloat translateY = (scaleFactor - 1.0) * self.headerInfoBoxView.frame.size.height;
     CGAffineTransform headerInfoBoxTransform = CGAffineTransformScale(CGAffineTransformIdentity, scaleFactor, scaleFactor);
