@@ -153,26 +153,21 @@
     self.progressBarTrailingSpacingConstraint.constant = progressBarTrailingSpace;
     
     
-    
-    
-    
 #define ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
     
-    CGFloat topContentOffset = -self.headerVisibleAfterCollapseView.frame.size.height;
-    
-    // prevent collapse/restore on bounce...
-    // top:
-    if (scrollView.contentOffset.y <= topContentOffset) return;
-    // bottom:
-    if (scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.bounds.size.height) return;
-    
-    
-    //static CGFloat minimumYOffset = 50;
-    
-    static CGFloat mimimumMovement = 1;
-    
     if ([self.parentViewController isKindOfClass:[DashboardTabViewController class]]) {
+        
+        CGFloat topContentOffset = -self.headerVisibleAfterCollapseView.frame.size.height;
+        
+        // prevent collapse/restore on bounce...
+        // top:
+        if (scrollView.contentOffset.y <= topContentOffset) return;
+        // bottom:
+        if (scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.bounds.size.height) return;
+        
+        static CGFloat mimimumMovement = 1;
+        
         DashboardTabViewController *dtvc = (DashboardTabViewController *)self.parentViewController;
         static BOOL animated = YES;
         if (scrollView.contentOffset.y <= topContentOffset) {
