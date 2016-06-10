@@ -692,7 +692,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0o-as-kpN">
-                                        <rect key="frame" x="190" y="8" width="220" height="104"/>
+                                        <rect key="frame" x="190" y="14" width="220" height="104"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simpson's ken closup.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="p69-70-tzk">
                                                 <rect key="frame" x="73" y="0.0" width="75" height="75"/>
@@ -724,6 +724,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bax-Qe-Dii">
                                                 <rect key="frame" x="18" y="14" width="564" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="b7i-rG-aWq"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -734,25 +737,30 @@
                                             <constraint firstItem="Bax-Qe-Dii" firstAttribute="leading" secondItem="krT-Pm-Ymk" secondAttribute="leading" constant="18" id="jji-HL-U3M"/>
                                             <constraint firstAttribute="trailing" secondItem="Bax-Qe-Dii" secondAttribute="trailing" constant="18" id="tAP-au-HDr"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0Hg-8a-gdy"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jub-pR-7ra">
-                                        <rect key="frame" x="546" y="8" width="36" height="36"/>
+                                        <rect key="frame" x="550" y="14" width="32" height="32"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="Ccj-aD-W9a"/>
-                                            <constraint firstAttribute="width" constant="36" id="aZK-wN-lcD"/>
+                                            <constraint firstAttribute="height" constant="32" id="Ccj-aD-W9a"/>
+                                            <constraint firstAttribute="width" constant="32" id="aZK-wN-lcD"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="jub-pR-7ra" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="8" id="5zs-pU-34J"/>
+                                    <constraint firstItem="jub-pR-7ra" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="14" id="5zs-pU-34J"/>
                                     <constraint firstAttribute="height" constant="180" id="7LP-87-FFo"/>
                                     <constraint firstAttribute="trailing" secondItem="krT-Pm-Ymk" secondAttribute="trailing" id="Hy7-qk-5qu"/>
                                     <constraint firstItem="E0o-as-kpN" firstAttribute="centerX" secondItem="E7x-Pk-VQs" secondAttribute="centerX" id="MY5-yS-Afx"/>
                                     <constraint firstAttribute="bottom" secondItem="krT-Pm-Ymk" secondAttribute="bottom" id="SzP-xJ-w2F"/>
                                     <constraint firstItem="krT-Pm-Ymk" firstAttribute="leading" secondItem="E7x-Pk-VQs" secondAttribute="leading" id="iqW-4a-L82"/>
-                                    <constraint firstItem="E0o-as-kpN" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="8" id="sTF-Nf-Hx7"/>
+                                    <constraint firstItem="E0o-as-kpN" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="14" id="sTF-Nf-Hx7"/>
                                     <constraint firstAttribute="trailing" secondItem="jub-pR-7ra" secondAttribute="trailing" constant="18" id="ym0-fd-04z"/>
                                 </constraints>
                             </view>
