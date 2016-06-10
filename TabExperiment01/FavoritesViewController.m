@@ -49,45 +49,6 @@
     
     // Set content inset to push top of table contents out from under header:
     self.tableView.contentInset = UIEdgeInsetsMake(self.headerHeightFromStoryboard, 0, 0, 0);
-    
-    
-    //self.tableView.contentInset = UIEdgeInsetsMake(kHeaderHeight, 0, 0, 0);
-
-    /*
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.origin.x,
-                                                                 self.view.bounds.origin.y,
-                                                                 self.view.bounds.size.width,
-                                                                 kHeaderHeight)];
-    headerView.backgroundColor  = [UIColor redColor];
-    [self.view addSubview:headerView];
-    [self.view bringSubviewToFront:headerView];
-    headerView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    NSDictionary *viewsDictionary = @{@"headerView":headerView};
-    NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[headerView]"
-                                                                        options:0
-                                                                        metrics:nil
-                                                                          views:viewsDictionary];
-    
-    NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[headerView]-0-|"
-                                                                        options:0
-                                                                        metrics:nil
-                                                                          views:viewsDictionary];
-    
-    NSLayoutConstraint *constraint_HEIGHT = [NSLayoutConstraint constraintWithItem:headerView
-                                                                         attribute:NSLayoutAttributeHeight
-                                                                         relatedBy:NSLayoutRelationEqual
-                                                                            toItem:nil
-                                                                         attribute:NSLayoutAttributeNotAnAttribute
-                                                                        multiplier:1.0
-                                                                          constant:kHeaderHeight];
-    [self.view addConstraints:constraint_POS_V];
-    [self.view addConstraints:constraint_POS_H];
-    [self.view addConstraint:constraint_HEIGHT];
-    
-    self.headerView = headerView;
-    self.headerHeightConstraint = constraint_HEIGHT;
-     */
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -108,50 +69,24 @@
 {
     NSLog(@"SCROLL! %g", scrollView.contentOffset.y);
     
-    
     CGFloat headerHeightAdj = 0 - scrollView.contentOffset.y;
     headerHeightAdj = MIN(self.headerHeightFromStoryboard, headerHeightAdj);
     headerHeightAdj = MAX(self.headerVisibleAfterCollapseView.frame.size.height, headerHeightAdj);
     self.headerHeightConstraint.constant = headerHeightAdj;
     
     CGFloat scaleFactor = (headerHeightAdj - self.headerVisibleAfterCollapseView.frame.size.height) / (self.headerHeightFromStoryboard - self.headerVisibleAfterCollapseView.frame.size.height);
-    
     //NSLog(@"scaleFactor: %g", scaleFactor);
-    
-    //CGFloat translateY = (scaleFactor - 1.0) * self.headerInfoBoxView.frame.size.height;
     CGAffineTransform headerInfoBoxTransform = CGAffineTransformScale(CGAffineTransformIdentity, scaleFactor, scaleFactor);
 
-    /*
-    headerInfoBoxTransform = CGAffineTransformTranslate(headerInfoBoxTransform,
-                                                                          0,
-                                                                          translateY);
-     */
-    //self.headerInfoBoxView.layer.anchorPoint = CGPointMake( self.headerInfoBoxView.layer.bounds.size.width / 2.0, 0.0);
-
-    //self.headerInfoBoxView.layer.anchorPoint = CGPointMake(0.5, 0.0);
     self.headerInfoBoxView.transform = headerInfoBoxTransform;
-    //self.headerInfoBoxView.layer.anchorPoint = CGPointMake(0.5, 0.5);
-    
     self.headerInfoBoxView.alpha = scaleFactor;
     
-    
-    //photoTitleTransform = CGAffineTransformScale(photoTitleTransform, scaleFactor, scaleFactor);
-    
-    //CGAffineTransformScale(CGAffineTransformIdentity, scaleFactor, scaleFactor);
-    //photoTitleTransform = CGAffineTransformTranslate(photoTitleTransform, 0, self.headerPhotoSpacingFromStoryboard - (scaleFactor * self.headerPhotoSpacingFromStoryboard));
-    
-    //self.headerPhoto.transform = photoTitleTransform;
-    //self.headerTitle.transform = photoTitleTransform;
-    //self.headerPhotoTopSpacingConstraint.constant = self.headerPhotoSpacingFromStoryboard * scaleFactor;
-    //self.headerTitleTopSpacingConstraint.constant = self.headerTitleSpacingFromStoryboard * scaleFactor;
-
     static CGFloat progressBarAndNTButtonPadding = 14.0;
     
     CGFloat progressBarTrailingSpaceDeltaAfterCollapse = self.headerNTButton.frame.size.width + progressBarAndNTButtonPadding;
     CGFloat progressBarTrailingSpaceDeltaScaled = progressBarTrailingSpaceDeltaAfterCollapse * (1.0 - scaleFactor);
     CGFloat progressBarTrailingSpace = self.progressBarTrailingSpacingFromStoryboard + progressBarTrailingSpaceDeltaScaled;
     self.progressBarTrailingSpacingConstraint.constant = progressBarTrailingSpace;
-    
     
 #define ENABLE_TAB_COLLAPSE
 #ifdef ENABLE_TAB_COLLAPSE
@@ -194,14 +129,10 @@
     return 30;
 }
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dummyCell" forIndexPath:indexPath];
     return cell;
 }
-
-
 
 /*
 #pragma mark - Navigation
