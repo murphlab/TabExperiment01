@@ -661,7 +661,7 @@
                         <viewControllerLayoutGuide type="top" id="wpP-mc-w0w"/>
                         <viewControllerLayoutGuide type="bottom" id="pUZ-pM-SlC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4te-s1-qHC">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="4te-s1-qHC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -692,7 +692,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0o-as-kpN">
-                                        <rect key="frame" x="190" y="14" width="220" height="104"/>
+                                        <rect key="frame" x="190" y="16" width="220" height="104"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simpson's ken closup.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="p69-70-tzk">
                                                 <rect key="frame" x="73" y="0.0" width="75" height="75"/>
@@ -724,8 +724,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bax-Qe-Dii">
                                                 <rect key="frame" x="18" y="14" width="564" height="32"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(fake progress bar)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-Ps-a1K">
-                                                        <rect key="frame" x="221" y="7" width="122" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(progress bar)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-Ps-a1K">
+                                                        <rect key="frame" x="237" y="7" width="91" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -780,7 +780,7 @@
                                     <constraint firstItem="E0o-as-kpN" firstAttribute="centerX" secondItem="E7x-Pk-VQs" secondAttribute="centerX" id="MY5-yS-Afx"/>
                                     <constraint firstAttribute="bottom" secondItem="krT-Pm-Ymk" secondAttribute="bottom" id="SzP-xJ-w2F"/>
                                     <constraint firstItem="krT-Pm-Ymk" firstAttribute="leading" secondItem="E7x-Pk-VQs" secondAttribute="leading" id="iqW-4a-L82"/>
-                                    <constraint firstItem="E0o-as-kpN" firstAttribute="top" secondItem="E7x-Pk-VQs" secondAttribute="top" constant="14" id="sTF-Nf-Hx7"/>
+                                    <constraint firstItem="krT-Pm-Ymk" firstAttribute="top" secondItem="E0o-as-kpN" secondAttribute="bottom" id="vbX-cR-8dX"/>
                                     <constraint firstAttribute="trailing" secondItem="jub-pR-7ra" secondAttribute="trailing" constant="18" id="ym0-fd-04z"/>
                                 </constraints>
                             </view>
